@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Writing | Mrs. Seay's Writing Center</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --deep-forest: #18392b;
+            --forest: #285b43;
+            --botanical: #4d8065;
+            --sage: #e5efe8;
+            --pale-sage: #f1f6f2;
+            --cream: #fcf9f2;
+            --white: #ffffff;
+            --gold: #c6a252;
+            --soft-gold: #eadbb3;
+            --text: #272b29;
+            --muted: #626962;
+            --border: #d5ded7;
+            --good: #edf6f0;
+            --good-border: #6f987d;
+            --bad: #f8eeee;
+            --bad-border: #a87575;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--deep-forest);
+        }
+
+        .container {
+            width: min(92%, 980px);
+            margin: 0 auto;
+        }
+
+        /* =========================
+           MASTHEAD
+        ========================== */
+
+        .masthead {
+            background: linear-gradient(
+                135deg,
+                var(--deep-forest) 0%,
+                var(--forest) 58%,
+                #376b52 100%
+            );
+            color: var(--white);
+        }
+
+        .masthead-inner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 0;
+        }
+
+        .brand-logo-wrap {
+            width: 92px;
+            height: 92px;
+            flex: 0 0 92px;
+            border-radius: 50%;
+            background: var(--cream);
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .brand-logo {
+            width: 78px;
+            height: 78px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .brand-text h1 {
+            font-family: "Libre Baskerville", serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            color: var(--white);
+        }
+
+        .brand-text p {
+            margin-top: 7px;
+            font-size: 1rem;
+            color: #f4efe2;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        .main-nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .main-nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            display: block;
+            padding: 15px 16px 13px;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--deep-forest);
+            border-bottom: 3px solid transparent;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .main-nav a:hover {
+            background: var(--pale-sage);
+            border-bottom-color: var(--soft-gold);
+        }
+
+        .main-nav a.active {
+            background: #f7faf7;
+            border-bottom-color: var(--forest);
+        }
+
+        /* =========================
+           MAIN PAGE
+        ========================== */
+
+        main {
+            padding: 38px 0 70px;
+        }
+
+        .eyebrow {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--botanical);
+            margin-bottom: 8px;
+        }
+
+        .page-title {
+            font-family: "Libre Baskerville", serif;
+            font-size: clamp(2.3rem, 5vw, 3.5rem);
+            color: var(--deep-forest);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .page-intro {
+            max-width: 900px;
+            font-size: 1.03rem;
+            margin-bottom: 26px;
+        }
+
+        .opening-callout {
+            background: var(--sage);
+            border-left: 7px solid var(--forest);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .opening-callout h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: 1.2rem;
+            margin-bottom: 7px;
+        }
+
+        /* =========================
+           TABLE OF CONTENTS
+        ========================== */
+
+        .table-of-contents {
+            background: var(--sage);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0 34px;
+        }
+
+        .table-of-contents h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: 1.25rem;
+            margin-bottom: 14px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .toc-grid a {
+            display: block;
+            background: var(--white);
+            border: 1px solid #ccd8cf;
+            border-radius: 7px;
+            padding: 11px 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--deep-forest);
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .toc-grid a:hover {
+            border-color: var(--botanical);
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           CONTENT SECTIONS
+        ========================== */
+
+        .content-section {
+            margin: 42px 0 58px;
+            scroll-margin-top: 30px;
+        }
+
+        .content-section > h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: clamp(1.75rem, 3vw, 2.35rem);
+            border-bottom: 3px solid var(--soft-gold);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .content-section h3 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--forest);
+            font-size: 1.3rem;
+            margin: 26px 0 9px;
+        }
+
+        .content-section h4 {
+            color: var(--deep-forest);
+            margin: 19px 0 7px;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            padding-left: 27px;
+            margin: 12px 0 19px;
+        }
+
+        .content-section li {
+            margin-bottom: 8px;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: var(--sage);
+            color: var(--forest);
+            font-weight: 700;
+            padding: 6px 11px;
+            border-radius: 6px;
+            margin-bottom: 17px;
+        }
+
+        /* =========================
+           BOXES AND EXAMPLES
+        ========================== */
+
+        .quick-tip {
+            background: var(--sage);
+            border-left: 6px solid var(--botanical);
+            border-radius: 0 9px 9px 0;
+            padding: 19px 22px;
+            margin: 22px 0;
+        }
+
+        .quick-tip h3 {
+            margin: 0 0 7px;
+            color: var(--deep-forest);
+            font-size: 1.08rem;
+        }
+
+        .gold-tip {
+            background: #fbf6e8;
+            border-left-color: var(--gold);
+        }
+
+        .subsection-box {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin: 20px 0;
+        }
+
+        .example {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 19px 21px;
+            margin: 15px 0 22px;
+        }
+
+        .example-good {
+            background: var(--good);
+            border-left: 6px solid var(--good-border);
+        }
+
+        .example-bad {
+            background: var(--bad);
+            border-left: 6px solid var(--bad-border);
+        }
+
+        .example-title {
+            display: block;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--deep-forest);
+            margin-bottom: 8px;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 14px;
+            margin: 18px 0 24px;
+        }
+
+        .comparison > div:not(.arrow) {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--botanical);
+            border-radius: 9px;
+            padding: 17px 18px;
+        }
+
+        .comparison .arrow {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* =========================
+           PARAGRAPH MAP
+        ========================== */
+
+        .paragraph-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 9px;
+            margin: 22px 0;
+        }
+
+        .paragraph-step {
+            background: var(--sage);
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--forest);
+            border-radius: 9px;
+            padding: 16px 12px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--deep-forest);
+        }
+
+        .paragraph-step span {
+            display: block;
+            margin-top: 5px;
+            font-weight: 400;
+            font-size: 0.86rem;
+            color: var(--muted);
+        }
+
+        /* =========================
+           THREE-WAY CARDS
+        ========================== */
+
+        .three-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 22px 0;
+        }
+
+        .info-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--botanical);
+            border-radius: 10px;
+            padding: 18px 19px;
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+            color: var(--deep-forest);
+            font-size: 1.1rem;
+        }
+
+        /* =========================
+           DOUBLE DOWN
+        ========================== */
+
+        .double-down {
+            background: var(--deep-forest);
+            color: var(--white);
+            border-radius: 12px;
+            padding: 26px 28px;
+            margin: 24px 0;
+        }
+
+        .double-down h3 {
+            color: var(--white);
+            margin: 0 0 10px;
+            font-size: 1.35rem;
+        }
+
+        .double-down strong {
+            color: #f2dda4;
+        }
+
+        .double-down p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           SYNTHESIS
+        ========================== */
+
+        .source-row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 15px;
+            align-items: start;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 15px 17px;
+            margin: 10px 0;
+        }
+
+        .source-name {
+            font-weight: 700;
+            color: var(--forest);
+        }
+
+        /* =========================
+           INTRO / CONCLUSION
+        ========================== */
+
+        .funnel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 24px 0;
+        }
+
+        .funnel {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            overflow: hidden;
+        }
+
+        .funnel h3 {
+            margin: 0;
+            padding: 15px 18px;
+            background: var(--sage);
+            color: var(--deep-forest);
+        }
+
+        .funnel-body {
+            padding: 18px;
+        }
+
+        .funnel-step {
+            text-align: center;
+            padding: 9px;
+            margin: 7px auto;
+            background: var(--pale-sage);
+            border-radius: 6px;
+        }
+
+        .wide {
+            width: 100%;
+        }
+
+        .medium {
+            width: 80%;
+        }
+
+        .narrow {
+            width: 58%;
+        }
+
+        /* =========================
+           CHECKLIST
+        ========================== */
+
+        .checklist {
+            list-style: none;
+            padding-left: 0 !important;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: var(--forest);
+            font-size: 1.15rem;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* =========================
+           RELATED RESOURCES
+        ========================== */
+
+        .related-resources {
+            background: var(--sage);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px 25px;
+            margin-top: 34px;
+        }
+
+        .related-resources h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+        }
+
+        .related-resources ul {
+            padding-left: 23px;
+        }
+
+        .related-resources li {
+            margin-bottom: 7px;
+        }
+
+        .source-note {
+            margin-top: 28px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        .source-note h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: var(--deep-forest);
+            color: #f6f1e7;
+            border-top: 5px solid var(--gold);
+            text-align: center;
+            padding: 24px 20px;
+        }
+
+        footer p {
+            margin: 3px 0;
+            font-size: 0.92rem;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+            .toc-grid,
+            .three-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .paragraph-flow,
+            .funnel-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .masthead-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+            }
+
+            .main-nav a {
+                text-align: center;
+            }
+
+            .toc-grid,
+            .three-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison .arrow {
+                text-align: center;
+                transform: rotate(90deg);
+            }
+
+            .source-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <header class="masthead">
+        <div class="container masthead-inner">
+
+            <div class="brand-logo-wrap">
+                <img
+                    class="brand-logo"
+                    src="finch-logo.png"
+                    alt="A finch sitting on an open book"
+                >
+            </div>
+
+            <div class="brand-text">
+                <h1>Mrs. Seay's Writing Center</h1>
+                <p>Composition II research, writing, and supporting materials</p>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a class="active" href="writing.html">Writing</a></li>
+            <li><a href="essay-types.html">Major Assignments</a></li>
+            <li><a href="grammar.html">Grammar</a></li>
+            <li><a href="apa.html">APA</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <p class="eyebrow">Composition II</p>
+
+            <h1 class="page-title">Writing</h1>
+
+            <p class="page-intro">
+                Research gives you information. Writing gives that information
+                direction. Strong research-based writing does more than report what
+                sources say: it develops your own ideas, uses evidence deliberately,
+                connects sources to one another, and explains why the information
+                matters.
+            </p>
+
+            <div class="opening-callout">
+                <h2>Your Voice Should Lead the Paper</h2>
+
+                <p>
+                    Sources add evidence and credibility, but they should support
+                    your thinking rather than replace it. Your reader should leave
+                    the paper understanding what <strong>you</strong> learned,
+                    connected, interpreted, and concluded from the research.
+                </p>
+            </div>
+
+            <nav
+                class="table-of-contents"
+                aria-label="Writing table of contents"
+            >
+                <h2>On This Page</h2>
+
+                <div class="toc-grid">
+                    <a href="#voice">Academic Writing &amp; Voice</a>
+                    <a href="#paragraphs">Building Academic Paragraphs</a>
+                    <a href="#evidence">Using Evidence Effectively</a>
+                    <a href="#source-use">Quote, Paraphrase &amp; Summary</a>
+                    <a href="#integration">Integrating Evidence</a>
+                    <a href="#double-down">The Double Down Rule</a>
+                    <a href="#synthesis">Synthesis</a>
+                    <a href="#transitions">Transitions &amp; Connections</a>
+                    <a href="#introductions">Writing Introductions</a>
+                    <a href="#conclusions">Writing Conclusions</a>
+                    <a href="#revision">Revising Research-Based Writing</a>
+                </div>
+            </nav>
+
+            <!-- ACADEMIC WRITING -->
+
+            <section class="content-section" id="voice">
+
+                <h2>Academic Writing &amp; Voice</h2>
+
+                <p class="section-label">
+                    Be formal without disappearing
+                </p>
+
+                <p>
+                    Academic writing values precision, clarity, objectivity, and
+                    control. Formal writing does not mean using unnecessarily large
+                    words or sounding unlike yourself. It means making deliberate
+                    language choices that keep the focus on the ideas.
+                </p>
+
+                <h3>Common Academic Conventions</h3>
+
+                <ul class="checklist">
+                    <li>Avoid first-person phrases such as “I think” or “I believe.”</li>
+                    <li>Avoid generalized second person such as “you” or “your.”</li>
+                    <li>Write contractions in their complete form.</li>
+                    <li>Avoid slang, clichés, and overly conversational wording.</li>
+                    <li>Make direct statements instead of asking rhetorical questions.</li>
+                    <li>Avoid exaggerated or unnecessarily emotional language.</li>
+                    <li>Refer to authors formally, normally by last name.</li>
+                </ul>
+
+                <div class="comparison">
+                    <div>
+                        <strong>Less Direct:</strong><br>
+                        I think the study proves that food insecurity affects women
+                        differently.
+                    </div>
+
+                    <div class="arrow">→</div>
+
+                    <div>
+                        <strong>More Direct:</strong><br>
+                        The study demonstrates that food insecurity affects women
+                        differently.
+                    </div>
+                </div>
+
+                <div class="quick-tip">
+                    <h3>Formal Does Not Mean Lifeless</h3>
+
+                    <p>
+                        Your academic voice comes from the claims you make, the
+                        evidence you choose, the connections you notice, and the
+                        conclusions you draw. Removing “I think” does not remove you
+                        from the paper.
+                    </p>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- PARAGRAPHS -->
+
+            <section class="content-section" id="paragraphs">
+
+                <h2>Building Academic Paragraphs</h2>
+
+                <p class="section-label">
+                    Give every paragraph a job
+                </p>
+
+                <p>
+                    A strong academic paragraph develops one focused idea. The
+                    paragraph should not simply collect information that happens to
+                    relate to the topic.
+                </p>
+
+                <div class="paragraph-flow">
+
+                    <div class="paragraph-step">
+                        Claim
+                        <span>What idea is this paragraph developing?</span>
+                    </div>
+
+                    <div class="paragraph-step">
+                        Development
+                        <span>What does the reader need to understand first?</span>
+                    </div>
+
+                    <div class="paragraph-step">
+                        Evidence
+                        <span>What information supports the idea?</span>
+                    </div>
+
+                    <div class="paragraph-step">
+                        Analysis
+                        <span>Why does that evidence matter?</span>
+                    </div>
+
+                </div>
+
+                <h3>Start with the Point, Not the Source</h3>
+
+                <p>
+                    A body paragraph should normally begin with your own topic
+                    sentence. Do not allow a quotation to decide what the paragraph
+                    is about.
+                </p>
+
+                <div class="example example-bad">
+                    <span class="example-title">Source-Led Paragraph</span>
+
+                    <p>
+                        “Food insecurity affects women at disproportionately high
+                        rates” (Brown, 2022, p. 18). This shows that food insecurity
+                        affects women.
+                    </p>
+                </div>
+
+                <div class="example example-good">
+                    <span class="example-title">Writer-Led Paragraph</span>
+
+                    <p>
+                        Gender can shape how food insecurity is experienced within
+                        households. Brown (2022) found that “food insecurity affects
+                        women at disproportionately high rates” (p. 18). This
+                        disparity suggests that household food access cannot be
+                        understood only as an economic issue because social roles may
+                        also influence who absorbs the greatest effects of scarcity.
+                    </p>
+                </div>
+
+                <div class="quick-tip gold-tip">
+                    <h3>Ask One Question</h3>
+
+                    <p>
+                        If you cannot explain what a paragraph is trying to prove,
+                        clarify the paragraph before adding more evidence.
+                    </p>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- EVIDENCE -->
+
+            <section class="content-section" id="evidence">
+
+                <h2>Using Evidence Effectively</h2>
+
+                <p class="section-label">
+                    Evidence must actually prove something
+                </p>
+
+                <p>
+                    A source can be credible and still provide poor evidence for a
+                    particular claim. Good evidence must be relevant to the specific
+                    point you are making.
+                </p>
+
+                <h3>Evidence Is Not Decoration</h3>
+
+                <p>
+                    Do not add a quotation simply because it sounds intelligent,
+                    dramatic, or vaguely related to the topic. Ask what the
+                    information actually demonstrates.
+                </p>
+
+                <div class="comparison">
+                    <div>
+                        <strong>Related:</strong><br>
+                        The source discusses the general topic.
+                    </div>
+
+                    <div class="arrow">→</div>
+
+                    <div>
+                        <strong>Relevant:</strong><br>
+                        The source provides information that directly supports the
+                        claim being developed.
+                    </div>
+                </div>
+
+                <h3>Evidence Does Not Speak for Itself</h3>
+
+                <p>
+                    Readers should never be expected to determine why a quotation,
+                    statistic, study, or paraphrase proves your point. That
+                    explanation belongs to the writer.
+                </p>
+
+                <div class="quick-tip">
+                    <h3>After Every Piece of Evidence, Ask:</h3>
+
+                    <ul>
+                        <li>What does this information show?</li>
+                        <li>Why is it important?</li>
+                        <li>How does it support my claim?</li>
+                        <li>What can I infer from it?</li>
+                        <li>How does it connect to the other research?</li>
+                    </ul>
+                </div>
+
+                <h3>Look for Original Evidence</h3>
+
+                <p>
+                    When working with research studies, distinguish between the
+                    article's discussion of previous research and the findings of
+                    the study itself.
+                </p>
+
+                <p>
+                    An introduction or literature review can be extremely useful
+                    for understanding the scholarly conversation and mining other
+                    sources. However, when you need evidence from a study, look
+                    carefully at the results and discussion where the authors
+                    present and interpret their own findings.
+                </p>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- QUOTE PARAPHRASE SUMMARY -->
+
+            <section class="content-section" id="source-use">
+
+                <h2>Quote, Paraphrase &amp; Summary</h2>
+
+                <p class="section-label">
+                    Choose the form that fits the job
+                </p>
+
+                <p>
+                    Research can enter your writing in several ways. The best choice
+                    depends on what you need the source to accomplish.
+                </p>
+
+                <div class="three-grid">
+
+                    <div class="info-card">
+                        <h3>Quote</h3>
+
+                        <p>
+                            Uses the author's exact words.
+                        </p>
+
+                        <p>
+                            Quote when the wording is especially important,
+                            memorable, authoritative, or worthy of analysis.
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Paraphrase</h3>
+
+                        <p>
+                            Restates a specific passage or idea fully in your own
+                            wording and sentence structure.
+                        </p>
+
+                        <p>
+                            Paraphrase when the information matters more than the
+                            author's exact phrasing.
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Summary</h3>
+
+                        <p>
+                            Condenses a larger section or source into its central
+                            ideas.
+                        </p>
+
+                        <p>
+                            Summarize when the reader needs an overview rather than
+                            individual details.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="quick-tip gold-tip">
+                    <h3>All Three Require Citation</h3>
+
+                    <p>
+                        Changing the wording does not make the information yours.
+                        Quotations, paraphrases, and summaries all come from another
+                        source and must be credited.
+                    </p>
+                </div>
+
+                <h3>Paraphrasing Means More Than Replacing Words</h3>
+
+                <p>
+                    A true paraphrase changes both the wording and the sentence
+                    structure while preserving the source's meaning. Simply swapping
+                    several words for synonyms is not enough.
+                </p>
+
+                <h3>Do Not Overuse Any Form of Source Material</h3>
+
+                <p>
+                    Research-based writing still needs to sound like your paper.
+                    If most of the paragraph consists of quoted, paraphrased, or
+                    summarized material, the sources have begun to crowd out your
+                    own thinking.
+                </p>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- INTEGRATION -->
+
+            <section class="content-section" id="integration">
+
+                <h2>Integrating Evidence</h2>
+
+                <p class="section-label">
+                    Do not drop a source into the paragraph and walk away
+                </p>
+
+                <p>
+                    Source material should fit naturally into your sentence and
+                    paragraph. Readers need a bridge between your thinking and the
+                    source's contribution.
+                </p>
+
+                <h3>The Dropped Quote</h3>
+
+                <div class="example example-bad">
+                    <span class="example-title">Dropped Quote</span>
+
+                    <p>
+                        Food insecurity creates different challenges across
+                        demographic groups. “Women experience food insecurity at
+                        higher rates than men” (Brown, 2021, p. 93).
+                    </p>
+                </div>
+
+                <p>
+                    The quotation appears without a grammatical or rhetorical
+                    connection to the writer's sentence. The reader is left to
+                    figure out why it has suddenly appeared.
+                </p>
+
+                <h3>Tagging with a Signal Phrase</h3>
+
+                <div class="example example-good">
+                    <span class="example-title">Tagged Evidence</span>
+
+                    <p>
+                        According to Brown (2021), “women experience food insecurity
+                        at higher rates than men” (p. 93).
+                    </p>
+                </div>
+
+                <p>
+                    A signal phrase introduces the author and creates a clear bridge
+                    into the evidence.
+                </p>
+
+                <h3>Blending Evidence into Your Sentence</h3>
+
+                <div class="example example-good">
+                    <span class="example-title">Blended Evidence</span>
+
+                    <p>
+                        Gender is one factor shaping access to food because “women
+                        experience food insecurity at higher rates than men”
+                        (Brown, 2021, p. 93).
+                    </p>
+                </div>
+
+                <p>
+                    Blending makes the source part of the writer's own grammatical
+                    sentence. Both tagging and blending are useful, and strong
+                    research writing uses variety.
+                </p>
+
+                <h3>Quotes Must Fit Complete Sentences</h3>
+
+                <p>
+                    Whether you tag or blend, the quotation must function
+                    grammatically inside the sentence. Read the entire sentence
+                    aloud without mentally separating the quoted words from your
+                    own.
+                </p>
+
+                <h3>Using Ellipses and Brackets</h3>
+
+                <div class="subsection-box">
+                    <p>
+                        <strong>Ellipsis (...)</strong> can show that words have
+                        been omitted from the middle of quoted material.
+                    </p>
+
+                    <p>
+                        <strong>Brackets [ ]</strong> can show a small change made
+                        for grammar or clarity, such as adjusting a pronoun.
+                    </p>
+
+                    <p>
+                        Neither tool may be used to change the author's original
+                        meaning.
+                    </p>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- DOUBLE DOWN -->
+
+            <section class="content-section" id="double-down">
+
+                <h2>The Double Down Rule</h2>
+
+                <p class="section-label">
+                    Evidence begins the thinking. It does not end it.
+                </p>
+
+                <div class="double-down">
+                    <h3>Double Down</h3>
+
+                    <p>
+                        If a piece of evidence takes approximately
+                        <strong>one sentence</strong>, spend at least
+                        <strong>two sentences</strong> discussing, explaining,
+                        evaluating, connecting, or interpreting that evidence
+                        before moving to another source.
+                    </p>
+                </div>
+
+                <p>
+                    Double Down is not a mathematical law. It is a habit designed to
+                    keep your writing from becoming a chain of quotations.
+                </p>
+
+                <h3>What Can I Do After the Evidence?</h3>
+
+                <div class="three-grid">
+
+                    <div class="info-card">
+                        <h3>Explain</h3>
+                        <p>Clarify what the evidence demonstrates.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Analyze</h3>
+                        <p>Identify why the information matters to your claim.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Infer</h3>
+                        <p>Draw a reasonable conclusion from the evidence.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Connect</h3>
+                        <p>Relate the evidence to another idea or source.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Complicate</h3>
+                        <p>Explain a limitation, tension, or exception.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Extend</h3>
+                        <p>Use the evidence to develop the discussion further.</p>
+                    </div>
+
+                </div>
+
+                <div class="comparison">
+                    <div>
+                        <strong>Evidence:</strong><br>
+                        Brown (2021) found a measurable gender disparity in food
+                        insecurity.
+                    </div>
+
+                    <div class="arrow">→</div>
+
+                    <div>
+                        <strong>Double Down:</strong><br>
+                        This disparity suggests that food insecurity is shaped by
+                        more than household income alone. Gendered caregiving and
+                        resource-distribution expectations may influence who
+                        experiences scarcity most directly.
+                    </div>
+                </div>
+
+                <div class="quick-tip">
+                    <h3>Your Voice Should Be Louder</h3>
+
+                    <p>
+                        The quotation gives the paper support. Your explanation
+                        shows the reader that you understand what the support means.
+                    </p>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- SYNTHESIS -->
+
+            <section class="content-section" id="synthesis">
+
+                <h2>Synthesis</h2>
+
+                <p class="section-label">
+                    Put sources in conversation
+                </p>
+
+                <p>
+                    Synthesis happens when you organize writing around
+                    <strong>ideas</strong> rather than around individual sources.
+                    Instead of reporting what each scholar says one at a time, you
+                    use multiple sources to develop one part of the conversation.
+                </p>
+
+                <h3>Source-by-Source Writing</h3>
+
+                <div class="example example-bad">
+                    <span class="example-title">What Synthesis Is Not</span>
+
+                    <p>
+                        Brown studies gender and food insecurity. Brown finds that
+                        women experience greater food insecurity. Smith studies
+                        caregiving. Smith explains that women perform more caregiving
+                        labor. Jones studies household resources. Jones finds that
+                        household resources are not distributed evenly.
+                    </p>
+                </div>
+
+                <p>
+                    The sources are all present, but they are standing beside one
+                    another rather than interacting.
+                </p>
+
+                <h3>Idea-Centered Writing</h3>
+
+                <div class="source-row">
+                    <div class="source-name">Brown</div>
+                    <div>Gender disparities in food insecurity</div>
+                </div>
+
+                <div class="source-row">
+                    <div class="source-name">Smith</div>
+                    <div>Gendered expectations surrounding caregiving</div>
+                </div>
+
+                <div class="source-row">
+                    <div class="source-name">Jones</div>
+                    <div>Unequal distribution of resources within households</div>
+                </div>
+
+                <div class="example example-good">
+                    <span class="example-title">Synthesized Discussion</span>
+
+                    <p>
+                        Gender disparities in food insecurity may be connected to
+                        expectations surrounding women's roles inside households.
+                        While Brown identifies higher rates of food insecurity among
+                        women, Smith's research on caregiving suggests that women are
+                        also more likely to carry responsibility for meeting other
+                        family members' needs. Jones further complicates this pattern
+                        by demonstrating that household resources are not always
+                        distributed evenly. Together, these findings suggest that
+                        individual food insecurity can be shaped by social roles
+                        within the household, not simply by the total amount of food
+                        or income available.
+                    </p>
+                </div>
+
+                <h3>Look for Relationships Between Sources</h3>
+
+                <ul>
+                    <li>Do they agree?</li>
+                    <li>Does one source extend another?</li>
+                    <li>Do they study different parts of the same problem?</li>
+                    <li>Do they reach conflicting conclusions?</li>
+                    <li>Does one help explain the findings of another?</li>
+                    <li>Does one introduce a limitation or complication?</li>
+                </ul>
+
+                <div class="quick-tip">
+                    <h3>The Paragraph Belongs to the Idea</h3>
+
+                    <p>
+                        Do not ask, “What does Source A say?” Ask, “What does this
+                        paragraph need to explain, and which sources help me explain
+                        it?”
+                    </p>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- TRANSITIONS -->
+
+            <section class="content-section" id="transitions">
+
+                <h2>Transitions &amp; Connections</h2>
+
+                <p class="section-label">
+                    Show the relationship, not just the movement
+                </p>
+
+                <p>
+                    Transitions help readers understand how ideas, sentences, and
+                    paragraphs connect. Good transitions make the logic of the paper
+                    visible.
+                </p>
+
+                <h3>External Transitions</h3>
+
+                <p>
+                    External transitions connect major ideas across paragraphs.
+                    Instead of simply announcing that the topic has changed, they
+                    explain the relationship between the old idea and the new one.
+                </p>
+
+                <div class="comparison">
+                    <div>
+                        <strong>Weak:</strong><br>
+                        Another thing researchers study is household labor.
+                    </div>
+
+                    <div class="arrow">→</div>
+
+                    <div>
+                        <strong>Stronger:</strong><br>
+                        While economic access contributes to food insecurity,
+                        household labor expectations may further explain why its
+                        effects are not evenly distributed.
+                    </div>
+                </div>
+
+                <h3>Internal Transitions</h3>
+
+                <p>
+                    Internal transitions guide readers from sentence to sentence
+                    within a paragraph.
+                </p>
+
+                <div class="subsection-box">
+                    <p><strong>Agreement:</strong> similarly, likewise, in addition</p>
+                    <p><strong>Contrast:</strong> however, in contrast, while</p>
+                    <p><strong>Cause or result:</strong> therefore, consequently, as a result</p>
+                    <p><strong>Example:</strong> for example, specifically</p>
+                    <p><strong>Complication:</strong> although, despite this, nevertheless</p>
+                </div>
+
+                <div class="quick-tip gold-tip">
+                    <h3>A Transition Word Cannot Fix Broken Logic</h3>
+
+                    <p>
+                        Adding “however” does not create a contrast unless the ideas
+                        actually contrast. Decide what relationship exists first,
+                        then choose language that makes that relationship clear.
+                    </p>
+                </div>
+
+                <h3>Proofread Between Paragraphs</h3>
+
+                <p>
+                    Read the final sentence of one paragraph and the first sentence
+                    of the next together. If the connection is unclear, revise the
+                    transition, clarify the logic, or reconsider the paragraph
+                    order.
+                </p>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- INTRODUCTIONS -->
+
+            <section class="content-section" id="introductions">
+
+                <h2>Writing Introductions</h2>
+
+                <p class="section-label">
+                    Move from the larger conversation toward your focus
+                </p>
+
+                <p>
+                    An introduction establishes what the paper is about, gives the
+                    reader necessary context, narrows toward the central issue, and
+                    presents the controlling argument or purpose.
+                </p>
+
+                <div class="funnel-grid">
+
+                    <div class="funnel">
+                        <h3>Introduction: General → Specific</h3>
+
+                        <div class="funnel-body">
+                            <div class="funnel-step wide">
+                                Larger Topic or Context
+                            </div>
+
+                            <div class="funnel-step medium">
+                                Relevant Background
+                            </div>
+
+                            <div class="funnel-step narrow">
+                                Focus / Thesis
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="funnel">
+                        <h3>What the Reader Should Know</h3>
+
+                        <div class="funnel-body">
+                            <ul>
+                                <li>What larger issue the paper addresses</li>
+                                <li>What context is necessary</li>
+                                <li>What specific problem or question matters</li>
+                                <li>What argument or controlling idea the paper develops</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h3>Things to Avoid</h3>
+
+                <div class="example example-bad">
+                    <span class="example-title">The Dictionary Opening</span>
+
+                    <p>
+                        Webster's Dictionary defines...
+                    </p>
+                </div>
+
+                <div class="example example-bad">
+                    <span class="example-title">The Assignment Restatement</span>
+
+                    <p>
+                        This assignment asks students to research...
+                    </p>
+                </div>
+
+                <div class="example example-bad">
+                    <span class="example-title">The Announcement</span>
+
+                    <p>
+                        In this paper, I will be discussing...
+                    </p>
+                </div>
+
+                <div class="quick-tip">
+                    <h3>Do Not Write a Mystery Novel</h3>
+
+                    <p>
+                        Academic readers should not have to wait several pages to
+                        discover what the paper is actually arguing. Be clear about
+                        where the paper is going.
+                    </p>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- CONCLUSIONS -->
+
+            <section class="content-section" id="conclusions">
+
+                <h2>Writing Conclusions</h2>
+
+                <p class="section-label">
+                    Move from your findings back toward the bigger picture
+                </p>
+
+                <p>
+                    A conclusion brings together the strands developed throughout
+                    the paper and explains what those ideas allow the reader to
+                    understand.
+                </p>
+
+                <div class="funnel-grid">
+
+                    <div class="funnel">
+                        <h3>Conclusion: Specific → General</h3>
+
+                        <div class="funnel-body">
+                            <div class="funnel-step narrow">
+                                Return to the Main Finding
+                            </div>
+
+                            <div class="funnel-step medium">
+                                Explain Significance
+                            </div>
+
+                            <div class="funnel-step wide">
+                                Connect to the Bigger Picture
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="funnel">
+                        <h3>What the Conclusion Should Do</h3>
+
+                        <div class="funnel-body">
+                            <ul>
+                                <li>Bring the developed ideas together</li>
+                                <li>Return to the paper's central purpose</li>
+                                <li>Explain significance or implications</li>
+                                <li>Connect to the larger academic conversation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h3>Do Not Simply Repeat the Introduction</h3>
+
+                <p>
+                    The reader has now traveled through the entire paper. A
+                    conclusion should reflect what has been learned or established,
+                    not merely restate the thesis using slightly different words.
+                </p>
+
+                <div class="quick-tip gold-tip">
+                    <h3>No New Evidence</h3>
+
+                    <p>
+                        The conclusion is not the place to introduce another study,
+                        quotation, or major claim. The evidence belongs in the body,
+                        where you have room to explain it.
+                    </p>
+                </div>
+
+                <div class="comparison">
+                    <div>
+                        <strong>Introduction:</strong><br>
+                        What does the reader need to understand before entering this
+                        discussion?
+                    </div>
+
+                    <div class="arrow">↔</div>
+
+                    <div>
+                        <strong>Conclusion:</strong><br>
+                        What can the reader understand now that the discussion has
+                        been developed?
+                    </div>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- REVISION -->
+
+            <section class="content-section" id="revision">
+
+                <h2>Revising Research-Based Writing</h2>
+
+                <p class="section-label">
+                    Check the thinking, not just the commas
+                </p>
+
+                <p>
+                    Editing focuses on correctness. Revision asks whether the paper
+                    actually works. Before polishing individual sentences, make sure
+                    the ideas, evidence, and relationships between sources are doing
+                    what you intended.
+                </p>
+
+                <h3>Research-Based Writing Checklist</h3>
+
+                <ul class="checklist">
+                    <li>My introduction establishes the context and clear focus of the paper.</li>
+                    <li>Each body paragraph develops one identifiable idea.</li>
+                    <li>My topic sentences begin with my ideas rather than quotations.</li>
+                    <li>Every piece of evidence directly supports the point around it.</li>
+                    <li>I integrate source material rather than dropping it into paragraphs.</li>
+                    <li>I explain and analyze evidence after using it.</li>
+                    <li>My voice remains more prominent than the voices of my sources.</li>
+                    <li>I use quoting, paraphrasing, and summarizing deliberately.</li>
+                    <li>I bring multiple sources together when they address the same idea.</li>
+                    <li>Transitions explain relationships between ideas.</li>
+                    <li>My conclusion explains significance rather than simply repeating the paper.</li>
+                    <li>I have cited all borrowed words, information, and ideas.</li>
+                </ul>
+
+                <div class="double-down">
+                    <h3>The Final Question</h3>
+
+                    <p>
+                        If the sources disappeared from the page, could a reader
+                        still identify <strong>your thinking</strong>?
+                    </p>
+
+                    <p>
+                        If not, the paper probably needs more analysis, synthesis,
+                        explanation, or connection between ideas.
+                    </p>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <aside class="related-resources">
+
+                <h2>Related Resources</h2>
+
+                <ul>
+                    <li>
+                        Need help finding and evaluating scholarly sources?
+                        Visit the <a href="research.html">Research page</a>.
+                    </li>
+
+                    <li>
+                        Need help formatting citations or building the References
+                        page? Visit the <a href="apa.html">APA page</a>.
+                    </li>
+
+                    <li>
+                        Looking for guidance specific to a literature review,
+                        annotated bibliography, or argumentative essay?
+                        Visit the <a href="essay-types.html">Major Assignments page</a>.
+                    </li>
+
+                    <li>
+                        Need help with sentence structure, punctuation, or grammar?
+                        Visit the <a href="grammar.html">Grammar page</a>.
+                    </li>
+                </ul>
+
+            </aside>
+
+            <section class="source-note">
+
+                <h2>Writing Foundations</h2>
+
+                <p>
+                    This resource was developed from instructional materials used
+                    in Composition II, including course materials on academic
+                    conventions, evidence, source integration, quoting,
+                    paraphrasing, summarizing, transitions, introductions, and
+                    conclusions.
+                </p>
+
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p><strong>Mrs. Seay's Writing Center</strong></p>
+        <p>Created by Brittany Seay</p>
+        <p>Version 1.0 • August 2026</p>
+    </footer>
+
+</body>
+</html>
