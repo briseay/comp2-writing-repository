@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Major Assignments | Mrs. Seay's Writing Center</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --deep-forest: #18392b;
+            --forest: #285b43;
+            --botanical: #4d8065;
+            --sage: #e5efe8;
+            --pale-sage: #f1f6f2;
+            --cream: #fcf9f2;
+            --white: #ffffff;
+            --gold: #c6a252;
+            --soft-gold: #eadbb3;
+            --text: #272b29;
+            --muted: #626962;
+            --border: #d5ded7;
+            --good: #edf6f0;
+            --good-border: #6f987d;
+            --bad: #f8eeee;
+            --bad-border: #a87575;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--deep-forest);
+        }
+
+        .container {
+            width: min(92%, 980px);
+            margin: 0 auto;
+        }
+
+        .masthead {
+            background: linear-gradient(
+                135deg,
+                var(--deep-forest) 0%,
+                var(--forest) 58%,
+                #376b52 100%
+            );
+            color: var(--white);
+        }
+
+        .masthead-inner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 0;
+        }
+
+        .brand-logo-wrap {
+            width: 92px;
+            height: 92px;
+            flex: 0 0 92px;
+            border-radius: 50%;
+            background: var(--cream);
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .brand-logo {
+            width: 78px;
+            height: 78px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .brand-text h1 {
+            font-family: "Libre Baskerville", serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            color: var(--white);
+        }
+
+        .brand-text p {
+            margin-top: 7px;
+            font-size: 1rem;
+            color: #f4efe2;
+        }
+
+        .main-nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .main-nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            display: block;
+            padding: 15px 16px 13px;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--deep-forest);
+            border-bottom: 3px solid transparent;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .main-nav a:hover {
+            background: var(--pale-sage);
+            border-bottom-color: var(--soft-gold);
+        }
+
+        .main-nav a.active {
+            background: #f7faf7;
+            border-bottom-color: var(--forest);
+        }
+
+        main {
+            padding: 38px 0 70px;
+        }
+
+        .eyebrow {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--botanical);
+            margin-bottom: 8px;
+        }
+
+        .page-title {
+            font-family: "Libre Baskerville", serif;
+            font-size: clamp(2.3rem, 5vw, 3.5rem);
+            color: var(--deep-forest);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .page-intro {
+            max-width: 900px;
+            font-size: 1.03rem;
+            margin-bottom: 26px;
+        }
+
+        .opening-callout {
+            background: var(--sage);
+            border-left: 7px solid var(--forest);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .opening-callout h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: 1.2rem;
+            margin-bottom: 7px;
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 28px 0 34px;
+        }
+
+        .journey-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--forest);
+            border-radius: 10px;
+            padding: 17px 15px;
+            text-align: center;
+        }
+
+        .journey-card strong {
+            display: block;
+            color: var(--deep-forest);
+            margin-bottom: 4px;
+        }
+
+        .journey-card span {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .table-of-contents {
+            background: var(--sage);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0 34px;
+        }
+
+        .table-of-contents h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: 1.25rem;
+            margin-bottom: 14px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .toc-grid a {
+            display: block;
+            background: var(--white);
+            border: 1px solid #ccd8cf;
+            border-radius: 7px;
+            padding: 11px 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--deep-forest);
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .toc-grid a:hover {
+            border-color: var(--botanical);
+            transform: translateY(-1px);
+        }
+
+        .content-section {
+            margin: 42px 0 58px;
+            scroll-margin-top: 30px;
+        }
+
+        .content-section > h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: clamp(1.75rem, 3vw, 2.35rem);
+            border-bottom: 3px solid var(--soft-gold);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .content-section h3 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--forest);
+            font-size: 1.3rem;
+            margin: 26px 0 9px;
+        }
+
+        .content-section h4 {
+            color: var(--deep-forest);
+            margin: 19px 0 7px;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            padding-left: 27px;
+            margin: 12px 0 19px;
+        }
+
+        .content-section li {
+            margin-bottom: 8px;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: var(--sage);
+            color: var(--forest);
+            font-weight: 700;
+            padding: 6px 11px;
+            border-radius: 6px;
+            margin-bottom: 17px;
+        }
+
+        .quick-tip {
+            background: var(--sage);
+            border-left: 6px solid var(--botanical);
+            border-radius: 0 9px 9px 0;
+            padding: 19px 22px;
+            margin: 22px 0;
+        }
+
+        .quick-tip h3 {
+            margin: 0 0 7px;
+            color: var(--deep-forest);
+            font-size: 1.08rem;
+        }
+
+        .gold-tip {
+            background: #fbf6e8;
+            border-left-color: var(--gold);
+        }
+
+        .subsection-box {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin: 20px 0;
+        }
+
+        .example {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 19px 21px;
+            margin: 15px 0 22px;
+        }
+
+        .example-good {
+            background: var(--good);
+            border-left: 6px solid var(--good-border);
+        }
+
+        .example-bad {
+            background: var(--bad);
+            border-left: 6px solid var(--bad-border);
+        }
+
+        .example-title {
+            display: block;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--deep-forest);
+            margin-bottom: 8px;
+        }
+
+        .three-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 22px 0;
+        }
+
+        .info-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--botanical);
+            border-radius: 10px;
+            padding: 18px 19px;
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+            color: var(--deep-forest);
+            font-size: 1.1rem;
+        }
+
+        .assignment-feature {
+            background: var(--deep-forest);
+            color: var(--white);
+            border-radius: 12px;
+            padding: 26px 28px;
+            margin: 24px 0;
+        }
+
+        .assignment-feature h3 {
+            color: var(--white);
+            margin: 0 0 10px;
+            font-size: 1.35rem;
+        }
+
+        .assignment-feature strong {
+            color: #f2dda4;
+        }
+
+        .assignment-feature p:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 9px;
+            margin: 22px 0;
+        }
+
+        .process-step {
+            background: var(--sage);
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--forest);
+            border-radius: 9px;
+            padding: 15px 11px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--deep-forest);
+        }
+
+        .argument-flow {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 9px;
+            margin: 22px 0;
+        }
+
+        .argument-step {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-bottom: 4px solid var(--botanical);
+            border-radius: 8px;
+            padding: 13px 12px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--deep-forest);
+        }
+
+        .checklist {
+            list-style: none;
+            padding-left: 0 !important;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: var(--forest);
+            font-size: 1.15rem;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .related-resources {
+            background: var(--sage);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px 25px;
+            margin-top: 34px;
+        }
+
+        .related-resources h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+        }
+
+        .related-resources ul {
+            padding-left: 23px;
+        }
+
+        .related-resources li {
+            margin-bottom: 7px;
+        }
+
+        .source-note {
+            margin-top: 28px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        .source-note h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background: var(--deep-forest);
+            color: #f6f1e7;
+            border-top: 5px solid var(--gold);
+            text-align: center;
+            padding: 24px 20px;
+        }
+
+        footer p {
+            margin: 3px 0;
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 850px) {
+            .journey-grid,
+            .three-grid,
+            .process-flow,
+            .argument-flow {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .masthead-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+            }
+
+            .main-nav a {
+                text-align: center;
+            }
+
+            .journey-grid,
+            .toc-grid,
+            .three-grid,
+            .process-flow,
+            .argument-flow {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <header class="masthead">
+        <div class="container masthead-inner">
+
+            <div class="brand-logo-wrap">
+                <img
+                    class="brand-logo"
+                    src="finch-logo.png"
+                    alt="A finch sitting on an open book"
+                >
+            </div>
+
+            <div class="brand-text">
+                <h1>Mrs. Seay's Writing Center</h1>
+                <p>Composition II research, writing, and supporting materials</p>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="writing.html">Writing</a></li>
+            <li><a class="active" href="essay-types.html">Major Assignments</a></li>
+            <li><a href="grammar.html">Grammar</a></li>
+            <li><a href="apa.html">APA</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <p class="eyebrow">Composition II</p>
+
+            <h1 class="page-title">Major Assignments</h1>
+
+            <p class="page-intro">
+                The major assignments in Composition II are not isolated projects.
+                Each one asks you to do something new with the same developing body
+                of research. As the semester progresses, you move from learning the
+                scholarly conversation to defining its terms, building your own
+                argument, and finally communicating what you know to other people.
+            </p>
+
+            <div class="opening-callout">
+                <h2>How the Assignments Connect</h2>
+
+                <p>
+                    Research develops in stages. First, you learn what others have
+                    discovered. Then you clarify important concepts, decide where you
+                    stand, and communicate your understanding to an audience.
+                </p>
+            </div>
+
+            <div class="journey-grid">
+
+                <div class="journey-card">
+                    <strong>Understand</strong>
+                    <span>Literature Review</span>
+                </div>
+
+                <div class="journey-card">
+                    <strong>Clarify</strong>
+                    <span>Definition Assignment</span>
+                </div>
+
+                <div class="journey-card">
+                    <strong>Enter</strong>
+                    <span>Argumentative Essay</span>
+                </div>
+
+                <div class="journey-card">
+                    <strong>Continue</strong>
+                    <span>Research Presentation</span>
+                </div>
+
+            </div>
+
+            <nav class="table-of-contents" aria-label="Major assignments table of contents">
+                <h2>On This Page</h2>
+
+                <div class="toc-grid">
+                    <a href="#literature-review">Literature Review: Understand the Conversation</a>
+                    <a href="#definition">Definition Assignment: Clarify the Conversation</a>
+                    <a href="#argument">Argumentative Essay: Enter the Conversation</a>
+                    <a href="#presentation">Research Presentation: Continue the Conversation</a>
+                </div>
+            </nav>
+
+            <!-- LITERATURE REVIEW -->
+
+            <section class="content-section" id="literature-review">
+
+                <h2>Literature Review: Understand the Conversation</h2>
+
+                <p class="section-label">
+                    Learn what scholars are already saying
+                </p>
+
+                <p>
+                    A literature review discusses published research on a focused
+                    topic. Its purpose is not to introduce new research or argue your
+                    personal position. Instead, it helps you understand what scholars
+                    have already discovered, where they agree, where they disagree,
+                    and what questions remain.
+                </p>
+
+                <div class="assignment-feature">
+                    <h3>The Goal</h3>
+
+                    <p>
+                        The literature review helps you understand how your research
+                        question fits into the <strong>ongoing academic conversation</strong>.
+                    </p>
+                </div>
+
+                <h3>Annotation Means Better Reading</h3>
+
+                <p>
+                    Scholarly articles can be dense. Annotation forces you to slow
+                    down, process difficult ideas, and respond to the text rather
+                    than simply moving your eyes across the page.
+                </p>
+
+                <div class="three-grid">
+
+                    <div class="info-card">
+                        <h3>Clarify</h3>
+                        <p>Define difficult terms or concepts.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Connect</h3>
+                        <p>Relate the reading to your question or another source.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Question</h3>
+                        <p>Ask about assumptions, methods, or implications.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Summarize</h3>
+                        <p>Capture the main point of a section.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Interpret</h3>
+                        <p>Explain what a result or claim might mean.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Compare</h3>
+                        <p>Notice where sources agree, differ, or overlap.</p>
+                    </div>
+
+                </div>
+
+                <div class="example example-bad">
+                    <span class="example-title">Weak Annotation</span>
+                    <p>Interesting.</p>
+                </div>
+
+                <div class="example example-good">
+                    <span class="example-title">Strong Annotation</span>
+                    <p>
+                        Connect: This supports my focus on rural digital access.
+                        Compare this result with the source that discusses device
+                        sharing in households.
+                    </p>
+                </div>
+
+                <h3>Writing Literature Review Summaries</h3>
+
+                <p>
+                    Literature review summaries are short and focused. Their job is
+                    to report the source's main idea, findings, or conclusion clearly
+                    and neutrally.
+                </p>
+
+                <ul class="checklist">
+                    <li>Focus only on the most important findings or conclusions.</li>
+                    <li>Use your own words.</li>
+                    <li>Avoid personal opinion.</li>
+                    <li>Avoid direct quotations.</li>
+                    <li>Use signal verbs such as finds, argues, reports, explains, or concludes.</li>
+                    <li>Make it clear that the ideas belong to the source.</li>
+                </ul>
+
+                <div class="quick-tip">
+                    <h3>Think Like a Reporter</h3>
+
+                    <p>
+                        Your job in a literature review summary is to represent the
+                        source accurately and fairly, not to explain whether you
+                        agree with it.
+                    </p>
+                </div>
+
+                <h3>Synthesis: Organize by Ideas, Not Sources</h3>
+
+                <p>
+                    Literature reviews become more useful when sources are grouped
+                    according to shared themes, findings, debates, or patterns.
+                    Instead of writing one paragraph about Source A and one paragraph
+                    about Source B, organize the review around what the research is
+                    collectively showing.
+                </p>
+
+                <div class="process-flow">
+                    <div class="process-step">Read</div>
+                    <div class="process-step">Annotate</div>
+                    <div class="process-step">Summarize</div>
+                    <div class="process-step">Group by Theme</div>
+                </div>
+
+                <h3>Writing the Literature Review Introduction</h3>
+
+                <p>
+                    A literature review introduction establishes the topic and helps
+                    readers understand the research landscape they are about to enter.
+                </p>
+
+                <ul>
+                    <li>Identify the general topic.</li>
+                    <li>Provide relevant context.</li>
+                    <li>Identify major trends or categories in the research.</li>
+                    <li>Note meaningful conflicts or gaps when appropriate.</li>
+                    <li>Explain the focus or purpose of the review.</li>
+                    <li>Present a thesis or statement of focus.</li>
+                </ul>
+
+                <div class="quick-tip gold-tip">
+                    <h3>A Literature Review Thesis Is Different</h3>
+
+                    <p>
+                        The thesis of a literature review often states the review's
+                        focus or purpose rather than making an argumentative claim.
+                    </p>
+                </div>
+
+                <h3>Writing the Literature Review Conclusion</h3>
+
+                <p>
+                    The conclusion should not simply repeat each source. Instead,
+                    bring together what the body of scholarship collectively shows.
+                </p>
+
+                <ul>
+                    <li>Summarize the major patterns across the research.</li>
+                    <li>Identify meaningful gaps or inconsistencies.</li>
+                    <li>Explain what the literature allows us to understand.</li>
+                    <li>Connect the topic back to the larger academic conversation.</li>
+                </ul>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- DEFINITION -->
+
+            <section class="content-section" id="definition">
+
+                <h2>Definition Assignment: Clarify the Conversation</h2>
+
+                <p class="section-label">
+                    Make sure everyone is using the same language
+                </p>
+
+                <p>
+                    Academic arguments become difficult when writers and readers use
+                    the same word but mean different things by it. Some concepts are
+                    layered, subjective, contested, or dependent on context.
+                </p>
+
+                <div class="assignment-feature">
+                    <h3>The Goal</h3>
+
+                    <p>
+                        Clarify the important terms and concepts that your audience
+                        must understand before the larger research conversation can
+                        make sense.
+                    </p>
+                </div>
+
+                <h3>Why Definitions Matter</h3>
+
+                <p>
+                    Terms such as <em>poverty</em>, <em>universal healthcare</em>,
+                    <em>free speech</em>, or <em>climate change</em> may appear
+                    straightforward, but people can apply them differently depending
+                    on context.
+                </p>
+
+                <p>
+                    When an important concept is ambiguous, readers may think they
+                    disagree with one another when they are actually working from
+                    different definitions.
+                </p>
+
+                <h3>What Should Be Defined?</h3>
+
+                <ul class="checklist">
+                    <li>The term is central to your topic.</li>
+                    <li>The term has more than one accepted meaning.</li>
+                    <li>The concept may be unfamiliar to your audience.</li>
+                    <li>The meaning changes depending on field, culture, policy, or context.</li>
+                    <li>Misunderstanding the term would weaken the argument.</li>
+                </ul>
+
+                <h3>Go Beyond the Dictionary</h3>
+
+                <p>
+                    Research definitions should help explain how a term functions
+                    inside the specific conversation you are studying. A simple
+                    dictionary entry may not capture its disciplinary, legal,
+                    cultural, medical, or social meaning.
+                </p>
+
+                <div class="quick-tip">
+                    <h3>Define for Clarity</h3>
+
+                    <p>
+                        The purpose is not to prove that your definition is the only
+                        possible one. It is to make clear how the concept is being
+                        used in your research so the audience understands the same
+                        conversation you are trying to enter.
+                    </p>
+                </div>
+
+                <h3>Connect the Definition to the Research</h3>
+
+                <p>
+                    A strong definition section does more than provide a quotation.
+                    It explains why the concept matters and how that meaning affects
+                    the issue being studied.
+                </p>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- ARGUMENT -->
+
+            <section class="content-section" id="argument">
+
+                <h2>Argumentative Essay: Enter the Conversation</h2>
+
+                <p class="section-label">
+                    Use the research to develop your own position
+                </p>
+
+                <p>
+                    By the time you reach the argumentative essay, you have already
+                    spent significant time learning the research conversation. Now
+                    you begin contributing your own reasoned position to it.
+                </p>
+
+                <div class="assignment-feature">
+                    <h3>The Goal</h3>
+
+                    <p>
+                        Present a claim that reasonable people could debate, support
+                        that claim with strong reasons and evidence, explain the logic
+                        connecting them, and engage fairly with alternative viewpoints.
+                    </p>
+                </div>
+
+                <h3>The Core of an Academic Argument</h3>
+
+                <div class="argument-flow">
+                    <div class="argument-step">Claim</div>
+                    <div class="argument-step">Reasons</div>
+                    <div class="argument-step">Evidence</div>
+                    <div class="argument-step">Warrant</div>
+                    <div class="argument-step">Response</div>
+                </div>
+
+                <h3>Claims</h3>
+
+                <p>
+                    A claim is the position you are asking your audience to seriously
+                    consider. Strong claims are clear, specific, supportable, and
+                    debatable by reasonable people.
+                </p>
+
+                <div class="quick-tip gold-tip">
+                    <h3>Do Not Argue a Fact</h3>
+
+                    <p>
+                        If no reasonable disagreement exists, you may have a statement
+                        of fact rather than an argumentative claim.
+                    </p>
+                </div>
+
+                <h3>Reasons</h3>
+
+                <p>
+                    Reasons explain why your claim deserves consideration. They are
+                    the major “whys” supporting the thesis-level position.
+                </p>
+
+                <p>
+                    Imagine that your reader does not automatically agree with you.
+                    That forces you to choose stronger reasons and provide better
+                    evidence.
+                </p>
+
+                <h3>Warrants</h3>
+
+                <p>
+                    A warrant explains the underlying belief or logic connecting a
+                    reason and the claim.
+                </p>
+
+                <p>
+                    Warrants become especially important when the audience is
+                    unfamiliar with the topic, resistant to the reason, or when the
+                    reasoning depends on a debated assumption.
+                </p>
+
+                <h3>Backing</h3>
+
+                <p>
+                    Backing provides additional support for the warrant. If your
+                    audience might question the assumption connecting your evidence
+                    to your claim, backing helps show why that connection is reasonable.
+                </p>
+
+                <h3>Qualifiers</h3>
+
+                <p>
+                    Qualifiers place honest limits on a claim. Words such as
+                    <em>many</em>, <em>some</em>, <em>often</em>, or
+                    <em>in certain situations</em> can make an argument stronger by
+                    preventing the writer from claiming more than the evidence can
+                    support.
+                </p>
+
+                <div class="quick-tip">
+                    <h3>Limit the Claim When Necessary</h3>
+
+                    <p>
+                        If the evidence does not support “always,” do not claim
+                        “always.” Precision strengthens credibility.
+                    </p>
+                </div>
+
+                <h3>Alternative Viewpoints</h3>
+
+                <p>
+                    An alternative viewpoint is a credible perspective that challenges
+                    or complicates your argument. It does not have to claim the exact
+                    opposite of your position.
+                </p>
+
+                <p>
+                    Strong academic writers demonstrate that they understand these
+                    perspectives before responding to them.
+                </p>
+
+                <div class="process-flow">
+                    <div class="process-step">Introduce the View</div>
+                    <div class="process-step">Provide Evidence</div>
+                    <div class="process-step">Explain the Reasoning</div>
+                    <div class="process-step">Respond with Research</div>
+                </div>
+
+                <div class="example example-bad">
+                    <span class="example-title">Weak Approach</span>
+
+                    <p>
+                        Some people disagree, but they are wrong.
+                    </p>
+                </div>
+
+                <div class="example example-good">
+                    <span class="example-title">Stronger Approach</span>
+
+                    <p>
+                        Explain the opposing position fairly, show why a reasonable
+                        person might find it convincing, then identify its limitations
+                        and respond with evidence.
+                    </p>
+                </div>
+
+                <h3>Acknowledgement and Response</h3>
+
+                <p>
+                    Recognizing the merits of another position can strengthen your
+                    credibility because it demonstrates that you understand the
+                    broader conversation rather than ignoring inconvenient evidence.
+                </p>
+
+                <p>
+                    But acknowledgement cannot be the final move. You must return to
+                    your own argument and explain how your research responds.
+                </p>
+
+                <div class="quick-tip gold-tip">
+                    <h3>Do Not End on Someone Else's Argument</h3>
+
+                    <p>
+                        If you introduce an alternative viewpoint and stop there, the
+                        reader leaves the paragraph focused on the opposing idea.
+                        Respond before moving forward.
+                    </p>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <!-- PRESENTATION -->
+
+            <section class="content-section" id="presentation">
+
+                <h2>Research Presentation: Continue the Conversation</h2>
+
+                <p class="section-label">
+                    Test your understanding by explaining it to others
+                </p>
+
+                <p>
+                    Research does not end when the paper is submitted. In academic,
+                    professional, and workplace settings, research often becomes a
+                    presentation, meeting, briefing, report, or conversation.
+                </p>
+
+                <div class="assignment-feature">
+                    <h3>The Goal</h3>
+
+                    <p>
+                        Take what you have learned, explain it clearly to other
+                        people, and discover whether you truly understand the ideas
+                        well enough to communicate them.
+                    </p>
+                </div>
+
+                <h3>Why Talking About Research Matters</h3>
+
+                <p>
+                    Writing gives you time to revise and polish. Speaking asks you to
+                    demonstrate that the knowledge is actually yours.
+                </p>
+
+                <ul>
+                    <li>Explaining research demonstrates understanding.</li>
+                    <li>Questions reveal gaps you may not notice while writing.</li>
+                    <li>Discussion exposes you to perspectives you may not have considered.</li>
+                    <li>Presentation requires you to identify what matters most.</li>
+                    <li>Communication turns research into something other people can use.</li>
+                </ul>
+
+                <h3>The Skills Do Not Change. The Format Does.</h3>
+
+                <div class="three-grid">
+
+                    <div class="info-card">
+                        <h3>Analyze</h3>
+                        <p>Decide which information matters most.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Organize</h3>
+                        <p>Give the audience a clear path through complex ideas.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Support</h3>
+                        <p>Use evidence to establish credibility.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Explain</h3>
+                        <p>Translate scholarly ideas into understandable language.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Respond</h3>
+                        <p>Answer questions and address different perspectives.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Adapt</h3>
+                        <p>Communicate differently depending on audience and setting.</p>
+                    </div>
+
+                </div>
+
+                <div class="quick-tip">
+                    <h3>Become the Person Who Knows the Topic</h3>
+
+                    <p>
+                        By the end of the semester, you have spent weeks reading,
+                        researching, defining, and arguing about this issue. The
+                        presentation is your chance to speak from that developed
+                        knowledge rather than merely reading information off a slide.
+                    </p>
+                </div>
+
+                <h3>Research Is Social</h3>
+
+                <p>
+                    Scholarship grows because people share ideas, challenge one
+                    another, ask questions, revise conclusions, and continue the
+                    conversation. Presenting your research lets you practice that
+                    final part of the process.
+                </p>
+
+                <div class="assignment-feature">
+                    <h3>The Bigger Picture</h3>
+
+                    <p>
+                        Research begins with a question, but it does not end with an
+                        answer. It continues when we <strong>share what we know and
+                        allow other people to respond.</strong>
+                    </p>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <aside class="related-resources">
+                <h2>Related Resources</h2>
+
+                <ul>
+                    <li>
+                        Need help finding, mining, or evaluating sources?
+                        Visit the <a href="research.html">Research page</a>.
+                    </li>
+
+                    <li>
+                        Need help integrating evidence, synthesizing sources, or
+                        revising research-based writing?
+                        Visit the <a href="writing.html">Writing page</a>.
+                    </li>
+
+                    <li>
+                        Need help with citations or References formatting?
+                        Visit the <a href="apa.html">APA page</a>.
+                    </li>
+
+                    <li>
+                        Need sentence structure, punctuation, or grammar support?
+                        Visit the <a href="grammar.html">Grammar page</a>.
+                    </li>
+                </ul>
+            </aside>
+
+            <section class="source-note">
+                <h2>Assignment Foundations</h2>
+
+                <p>
+                    This resource was developed from Composition II instructional
+                    materials on literature reviews, annotation, summaries,
+                    definitions, claims and reasons, Toulmin argument components,
+                    alternative viewpoints, acknowledgement and response, and
+                    research presentations.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p><strong>Mrs. Seay's Writing Center</strong></p>
+        <p>Created by Brittany Seay</p>
+        <p>Version 1.0 • August 2026</p>
+    </footer>
+
+</body>
+</html>
