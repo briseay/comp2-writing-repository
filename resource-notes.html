@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Resource Notes</title>
+
+  <meta
+    name="robots"
+    content="noindex, nofollow, noarchive"
+  >
+
+  <meta
+    name="description"
+    content="Internal Composition II instructional coaching reference."
+  >
+
+  <style>
+    :root {
+      --deep-forest: #18392b;
+      --forest: #285b43;
+      --botanical: #4d8065;
+      --sage: #e5efe8;
+      --pale-sage: #f1f6f2;
+      --cream: #fcf9f2;
+      --white: #ffffff;
+      --gold: #c6a252;
+      --soft-gold: #eadbb3;
+      --text: #272b29;
+      --muted: #626962;
+      --border: #d5ded7;
+
+      --note: #fbf6e8;
+      --note-border: #c6a252;
+
+      --good: #edf6f0;
+      --good-border: #6f987d;
+
+      --warning: #f8eeee;
+      --warning-border: #a87575;
+
+      --shadow: 0 8px 24px rgba(24, 57, 43, 0.08);
+      --radius: 14px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--deep-forest);
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 44px 20px;
+      background:
+        linear-gradient(
+          135deg,
+          var(--deep-forest),
+          var(--forest)
+        );
+      color: var(--white);
+      border-bottom: 5px solid var(--gold);
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+      line-height: 1.1;
+    }
+
+    header p {
+      max-width: 860px;
+      margin: 14px 0 0;
+      font-size: 1.08rem;
+      color: #f4efe2;
+    }
+
+    main {
+      padding: 38px 0 70px;
+    }
+
+    .internal-note,
+    .section-card,
+    .quick-nav,
+    .coaching-box,
+    .positive-box,
+    .warning-box {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .internal-note {
+      margin-bottom: 28px;
+      padding: 20px 22px;
+      background: var(--note);
+      border-left: 7px solid var(--note-border);
+    }
+
+    .internal-note h2 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--deep-forest);
+    }
+
+    .quick-nav {
+      margin-bottom: 32px;
+      padding: 22px;
+      background: var(--sage);
+      border: 1px solid var(--border);
+    }
+
+    .quick-nav h2 {
+      margin: 0 0 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--deep-forest);
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 10px;
+    }
+
+    .nav-grid a {
+      display: block;
+      padding: 11px 13px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-grid a:hover,
+    .nav-grid a:focus {
+      background: var(--pale-sage);
+      border-color: var(--botanical);
+    }
+
+    .section-card {
+      margin: 34px 0;
+      padding: 28px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      scroll-margin-top: 20px;
+    }
+
+    .section-label {
+      margin-bottom: 8px;
+      color: var(--botanical);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-card h2,
+    .section-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--deep-forest);
+    }
+
+    .section-card h2 {
+      margin-top: 0;
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+    }
+
+    .section-card h3 {
+      margin-top: 26px;
+      font-size: 1.28rem;
+    }
+
+    .feedback-list {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .feedback-list li {
+      margin-bottom: 12px;
+    }
+
+    .coaching-box,
+    .positive-box,
+    .warning-box {
+      margin: 18px 0;
+      padding: 18px 20px;
+    }
+
+    .coaching-box {
+      background: var(--sage);
+      border-left: 7px solid var(--forest);
+    }
+
+    .positive-box {
+      background: var(--good);
+      border-left: 7px solid var(--good-border);
+    }
+
+    .warning-box {
+      background: var(--warning);
+      border-left: 7px solid var(--warning-border);
+    }
+
+    .coaching-box h3,
+    .positive-box h3,
+    .warning-box h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+    }
+
+    .prompt-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .prompt-list li {
+      margin-bottom: 11px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .prompt-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--forest);
+      font-weight: 800;
+    }
+
+    details {
+      margin: 14px 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 14px 16px;
+      background: var(--sage);
+      color: var(--deep-forest);
+      font-weight: 800;
+    }
+
+    .details-content {
+      padding: 18px;
+    }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 24px 20px;
+      background: var(--deep-forest);
+      color: #f4efe2;
+      text-align: center;
+      border-top: 5px solid var(--gold);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 720px) {
+      .section-card {
+        padding: 21px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="container">
+      <h1>Resource Notes</h1>
+
+      <p>
+        Internal Composition II coaching language used to guide writing,
+        research, revision, and source-use support. This page is intentionally
+        unlinked from the student-facing Writing Center.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <aside class="internal-note">
+        <h2>Use of This Reference</h2>
+
+        <p>
+          Use these notes to mirror Mrs. Seay's coaching language, expectations,
+          and questioning style when helping students with Composition II work.
+        </p>
+
+        <p>
+          Do not assign grades, estimate grades, apply point deductions, invent
+          assignment requirements, or claim that a specific error exists unless
+          that error is actually present in the student's writing.
+        </p>
+
+        <p>
+          When an assignment prompt, rubric, instructor comment, or course
+          material is available, those materials take priority over this
+          reference.
+        </p>
+
+        <p>
+          Use feedback as coaching. Help students identify the concern,
+          understand why it matters, and decide what they should revise.
+          Do not simply rewrite the student's work for them.
+        </p>
+      </aside>
+
+      <nav class="quick-nav" aria-label="Resource note contents">
+        <h2>Reference Sections</h2>
+
+        <div class="nav-grid">
+          <a href="#process">Writing Process &amp; Mindset</a>
+          <a href="#tone">Academic Tone &amp; Conventions</a>
+          <a href="#introductions">Introductions &amp; Conclusions</a>
+          <a href="#claims">Claims, Thesis &amp; Focus</a>
+          <a href="#organization">Organization &amp; Transitions</a>
+          <a href="#evidence">Evidence &amp; Source Integration</a>
+          <a href="#analysis">Reasoning &amp; Analysis</a>
+          <a href="#research">Research &amp; Synthesis</a>
+          <a href="#lit-review">Literature Review Feedback</a>
+          <a href="#definition">Definition Assignment Feedback</a>
+          <a href="#argument">Argumentative Essay Feedback</a>
+          <a href="#alternative-viewpoint">Alternative Viewpoint Feedback</a>
+          <a href="#presentation">Research Presentation Coaching</a>
+          <a href="#grammar">Grammar &amp; Sentence Clarity</a>
+          <a href="#apa">APA &amp; Source Use</a>
+          <a href="#revision">Revision Coaching Questions</a>
+          <a href="#positive">Positive Feedback Language</a>
+        </div>
+      </nav>
+
+      <!-- PROCESS -->
+
+      <section class="section-card" id="process">
+        <div class="section-label">Common Feedback I Leave</div>
+
+        <h2>Writing Process &amp; Mindset</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Academic writing is a process of constant learning. Feedback should
+            help you identify what is working, what is unclear, and what needs
+            further development.
+          </li>
+
+          <li>
+            Marks that do not have an attached comment mean that the concern
+            has been addressed or explained elsewhere in the paper.
+          </li>
+
+          <li>
+            Feedback on a draft is foundational rather than all-inclusive.
+            Apply the explanation to similar concerns throughout the rest of
+            the paper.
+          </li>
+
+          <li>
+            Revision should focus first on content, logic, organization, and
+            development before moving to smaller editing concerns.
+          </li>
+
+          <li>
+            A strong revision does more than correct marked sentences. It uses
+            the feedback to improve the larger writing habits that created the
+            concern.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>Coaching Direction</h3>
+
+          <p>
+            Encourage students to slow down, identify the actual problem, and
+            revise the idea or logic rather than merely editing surface-level
+            wording.
+          </p>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- TONE -->
+
+      <section class="section-card" id="tone">
+        <div class="section-label">Common Feedback I Leave</div>
+
+        <h2>Academic Tone &amp; Conventions</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Do not use second person in academic arguments. It is informal and
+            can become accusatory because the audience cannot respond directly.
+          </li>
+
+          <li>
+            Avoid first-person personal and collective pronouns unless the
+            assignment specifically calls for reflection.
+          </li>
+
+          <li>
+            Avoid first-person collective pronouns such as <em>we, our,</em>
+            and <em>us</em>. You cannot speak for an undefined group of people.
+          </li>
+
+          <li>
+            Avoid all-inclusive wording such as <em>always, never, everyone,
+            all,</em> and <em>no one</em>. These claims usually exceed what can
+            be proven within the scope of a paper.
+          </li>
+
+          <li>
+            Do not use contractions in formal academic writing.
+          </li>
+
+          <li>
+            Do not ask rhetorical questions in academic papers. Instead of
+            asking the question, state the answer you want the reader to
+            understand.
+          </li>
+
+          <li>
+            Avoid metadiscourse. There is no need to tell readers what you are
+            about to discuss, what you are currently discussing, or what you
+            have already discussed.
+          </li>
+
+          <li>
+            Avoid weak modifiers such as <em>very, really, a lot,</em> and
+            <em>just</em>. Often the word can be removed or replaced with a
+            clearer choice.
+          </li>
+
+          <li>
+            Avoid clichés, colloquialisms, and phrasing that sounds
+            conversational rather than academic.
+          </li>
+
+          <li>
+            Be careful with evaluative or emotionally loaded language,
+            especially in argumentative writing. Readers who disagree with you
+            should still feel invited to seriously consider your reasoning.
+          </li>
+
+          <li>
+            Authors can discuss, argue, claim, explain, examine, evaluate,
+            conclude, or report. Avoid saying that written articles “talk,”
+            “speak,” or “say.”
+          </li>
+
+          <li>
+            Connect ideas to the author rather than the article when describing
+            an intellectual action. Articles are inanimate objects.
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- INTRO CONCLUSION -->
+
+      <section class="section-card" id="introductions">
+        <div class="section-label">Common Feedback I Leave</div>
+
+        <h2>Introductions &amp; Conclusions</h2>
+
+        <h3>Introductions</h3>
+
+        <ul class="feedback-list">
+          <li>
+            Open with a discussion slightly broader than the thesis so there is
+            space to establish necessary context before narrowing the paper.
+          </li>
+
+          <li>
+            The introduction should move from broad to narrow and lead naturally
+            toward the paper's central focus.
+          </li>
+
+          <li>
+            Do not use evidence or direct quotations in the introduction unless
+            the assignment specifically requires them.
+          </li>
+
+          <li>
+            Too much summary in the introduction can bury the contextual work
+            the opening should be doing.
+          </li>
+
+          <li>
+            An introduction may contain the required pieces but still need
+            revision if those pieces do not create a coherent introductory
+            conversation.
+          </li>
+        </ul>
+
+        <h3>Conclusions</h3>
+
+        <ul class="feedback-list">
+          <li>
+            A conclusion should move beyond summarizing what the paper already
+            discussed.
+          </li>
+
+          <li>
+            Look at the larger picture and ask what all of the developed ideas
+            show when viewed together.
+          </li>
+
+          <li>
+            Focus on significance, implications, unresolved questions, or the
+            larger conversation rather than repeating body paragraph content.
+          </li>
+
+          <li>
+            Do not introduce new evidence or direct quotations in the
+            conclusion.
+          </li>
+
+          <li>
+            The conclusion should feel connected to the paper rather than
+            introducing a new focus that appeared nowhere in the body.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>Useful Conclusion Question</h3>
+
+          <p>
+            What do all of these ideas, when viewed together, allow the reader
+            to understand now?
+          </p>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- CLAIMS -->
+
+      <section class="section-card" id="claims">
+        <div class="section-label">Common Feedback I Leave</div>
+
+        <h2>Claims, Thesis &amp; Focus</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Each body paragraph should begin with a clear point that establishes
+            what that paragraph is responsible for developing.
+          </li>
+
+          <li>
+            Do not begin the paragraph with evidence. Begin with your own
+            leading idea, then use research to support it.
+          </li>
+
+          <li>
+            A paragraph should not attempt to prove multiple unrelated claims
+            at once.
+          </li>
+
+          <li>
+            Strong claims should build together into one coherent larger
+            argument rather than functioning as separate mini-essays.
+          </li>
+
+          <li>
+            A topic sentence should identify the specific focus of the
+            paragraph, not merely name the general topic.
+          </li>
+
+          <li>
+            Ask “to what end?” What larger understanding is this point helping
+            the paper develop?
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- ORGANIZATION -->
+
+      <section class="section-card" id="organization">
+        <div class="section-label">Common Feedback I Leave</div>
+
+        <h2>Organization &amp; Transitions</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Internal transition needed. These ideas do not logically follow one
+            another without additional explanation.
+          </li>
+
+          <li>
+            External transition needed. Connect the main point of the previous
+            paragraph to the focus of the new paragraph.
+          </li>
+
+          <li>
+            A transition should explain the relationship between ideas, not
+            merely announce that the paper is moving to a new topic.
+          </li>
+
+          <li>
+            Do not repeat evidence or reasoning. Each new sentence should add
+            significance rather than restating what has already been explained.
+          </li>
+
+          <li>
+            Several sentences use the same opening structure. This can make the
+            writing feel choppy and rigid.
+          </li>
+
+          <li>
+            Streamline these thoughts. They can be combined and revised to
+            express the same information more clearly and concisely.
+          </li>
+
+          <li>
+            Clunky phrasing or organization is making the idea harder to read
+            than it needs to be.
+          </li>
+
+          <li>
+            Paragraphs may address the same general subject but still need
+            stronger connections to form one cohesive paper.
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- EVIDENCE -->
+
+      <section class="section-card" id="evidence">
+        <div class="section-label">Common Feedback I Leave</div>
+
+        <h2>Evidence &amp; Source Integration</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Evidence should prove your point rather than merely show that
+            another person agrees with you.
+          </li>
+
+          <li>
+            Evidence that repeats the claim does not prove the claim. It only
+            establishes that someone else has made a similar statement.
+          </li>
+
+          <li>
+            Use specific evidence that supports the discussion without
+            overshadowing your own voice.
+          </li>
+
+          <li>
+            This evidence is related to the topic but is too vague to function
+            as useful support for the specific point being developed.
+          </li>
+
+          <li>
+            Do not open or close a body paragraph with quoted or paraphrased
+            evidence. The first and last voices in the paragraph should normally
+            be yours.
+          </li>
+
+          <li>
+            A direct quotation cannot stand alone. Integrate it through tagging
+            or blending.
+          </li>
+
+          <li>
+            Use a comma when a quotation follows a verb of expression such as
+            <em>wrote, noted, explained,</em> or <em>commented</em>.
+          </li>
+
+          <li>
+            Do not use a comma when <em>that</em> blends the quotation directly
+            into your sentence.
+          </li>
+
+          <li>
+            Do not use ellipses at the beginning or end of a quotation simply
+            to show that material existed before or after the selected passage.
+          </li>
+
+          <li>
+            When material inside the original source already contains quotation
+            marks, use single quotation marks inside your quotation.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>The Double Down Rule</h3>
+
+          <p>
+            After using evidence, double down. If the evidence takes roughly one
+            sentence, spend at least two sentences explaining, interpreting,
+            breaking down, connecting, or extending that evidence before moving
+            to the next source.
+          </p>
+
+          <p>
+            The goal is not a perfect mathematical ratio. The goal is to keep
+            the writer's reasoning louder than the evidence.
+          </p>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- ANALYSIS -->
+
+      <section class="section-card" id="analysis">
+        <div class="section-label">Common Feedback I Leave</div>
+
+        <h2>Reasoning &amp; Analysis</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Explain how. The foundation of the idea may be present, but readers
+            should not be expected to fill in the logic because it feels obvious
+            to the writer.
+          </li>
+
+          <li>
+            Explain why the claim should be taken seriously.
+          </li>
+
+          <li>
+            The reasoning is underdeveloped because the conversation stops
+            before fully explaining the implications of the evidence.
+          </li>
+
+          <li>
+            Reasoning should link the claim and evidence together in a way that
+            demonstrates why the evidence actually matters.
+          </li>
+
+          <li>
+            Do not simply repeat the evidence after presenting it. Explain its
+            significance.
+          </li>
+
+          <li>
+            Avoid phrases such as “this shows” when they lead into a sentence
+            that simply restates the quotation. Move directly into the analysis.
+          </li>
+
+          <li>
+            Before moving forward, explain why the example functions in the way
+            you claim and what larger understanding follows from it.
+          </li>
+
+          <li>
+            Ask what logical step you are asking the reader to make. If that step
+            is invisible, explain it.
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- RESEARCH -->
+
+      <section class="section-card" id="research">
+        <div class="section-label">Composition II Coaching</div>
+
+        <h2>Research &amp; Synthesis</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Research should develop your understanding rather than simply help
+            you locate evidence for a conclusion you already decided was true.
+          </li>
+
+          <li>
+            A source does not need to stand alone. Group sources that address
+            the same idea, question, trend, or problem.
+          </li>
+
+          <li>
+            Synthesis means showing what multiple sources reveal when viewed
+            together.
+          </li>
+
+          <li>
+            Do not structure research writing as Source A, then Source B, then
+            Source C when those sources belong to the same scholarly discussion.
+          </li>
+
+          <li>
+            Look for agreement, disagreement, extensions, complications,
+            repeated researchers, and repeated concepts.
+          </li>
+
+          <li>
+            Strong scholarly evidence often appears in the results,
+            discussion, and conclusion sections rather than in abstracts or
+            introductory literature reviews.
+          </li>
+
+          <li>
+            Introductory sections and literature reviews can still be valuable
+            for understanding the conversation, learning terminology, and
+            mining citations.
+          </li>
+
+          <li>
+            Evidence should support the conversation being developed. A piece
+            of information can be true and still be too vague or disconnected
+            to function effectively.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>Synthesis Questions</h3>
+
+          <ul class="prompt-list">
+            <li>What do these sources show when read together?</li>
+            <li>Which sources belong in the same conversation?</li>
+            <li>Where do the sources agree?</li>
+            <li>Where do they complicate one another?</li>
+            <li>Does one source help explain another?</li>
+            <li>What larger pattern is becoming visible?</li>
+          </ul>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- LIT REVIEW -->
+
+      <section class="section-card" id="lit-review">
+        <div class="section-label">Assignment-Specific Feedback</div>
+
+        <h2>Literature Review Feedback</h2>
+
+        <h3>Overall Purpose</h3>
+
+        <ul class="feedback-list">
+          <li>
+            A literature review should present and synthesize the research
+            conversation rather than argue a personal position.
+          </li>
+
+          <li>
+            Avoid evaluative wording such as <em>good, bad, better, worst,</em>
+            or similar language that shifts the review toward argumentation.
+          </li>
+
+          <li>
+            Topic sentences should introduce what researchers are examining
+            without announcing the findings before the summaries do that work.
+          </li>
+
+          <li>
+            Wrap-up sentences should show what the grouped research reveals
+            when viewed together rather than repeat the topic sentence or simply
+            summarize the summaries.
+          </li>
+
+          <li>
+            A source should not stand alone when the assignment is asking for
+            synthesis. Group related research into thematic paragraphs.
+          </li>
+        </ul>
+
+        <h3>Condensed Summaries</h3>
+
+        <div class="coaching-box">
+          <h3>Three-Sentence Structure</h3>
+
+          <ol>
+            <li>Main point or focus of the source</li>
+            <li>Main findings or results</li>
+            <li>Main conclusion, significance, implication, or future direction</li>
+          </ol>
+        </div>
+
+        <ul class="feedback-list">
+          <li>
+            Each condensed summary should maintain the required balance rather
+            than spending disproportionate space on one source.
+          </li>
+
+          <li>
+            Every sentence in a pure summary should remain clearly connected to
+            the author through the name, pronoun, or an attribution phrase.
+          </li>
+
+          <li>
+            Without attribution, source ideas can read as if they belong to the
+            student.
+          </li>
+
+          <li>
+            Do not merely tell the reader that an author provided information.
+            Summarize what that information actually was.
+          </li>
+
+          <li>
+            A vague summary does not give readers enough information to
+            understand what the research actually found.
+          </li>
+
+          <li>
+            Make sure the summary includes the source's conclusion or
+            significance. Without it, the summary often feels unfinished.
+          </li>
+
+          <li>
+            Use present tense when introducing what research is examining, but
+            past tense may be appropriate when summarizing the completed work
+            of a specific study.
+          </li>
+        </ul>
+
+        <div class="warning-box">
+          <h3>Pure Summary and Source Wording</h3>
+
+          <p>
+            A pure summary should use the student's own wording and sentence
+            structure. Changing only a few words from the original is
+            paraphrasing, not summarizing.
+          </p>
+
+          <p>
+            If source wording is too close to the original, the student should
+            rewrite the information rather than merely add quotation marks when
+            the assignment requires pure summary.
+          </p>
+        </div>
+
+        <h3>Introduction</h3>
+
+        <ul class="feedback-list">
+          <li>
+            The literature review introduction should provide context for the
+            topic rather than begin making the later argumentative claim.
+          </li>
+
+          <li>
+            Introduce major categories, themes, trends, or research directions
+            that organize the review.
+          </li>
+
+          <li>
+            Develop enough context before the category breakdown for readers to
+            understand the research landscape.
+          </li>
+        </ul>
+
+        <h3>Conclusion</h3>
+
+        <ul class="feedback-list">
+          <li>
+            The conclusion should focus on what the reviewed research
+            collectively shows.
+          </li>
+
+          <li>
+            Address gaps in this review or unresolved areas of understanding,
+            not simply practical problems outside the scope of the reviewed
+            scholarship.
+          </li>
+
+          <li>
+            Explain what the review helps readers understand rather than
+            turning the conclusion into an argumentative section.
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- DEFINITION -->
+
+      <section class="section-card" id="definition">
+        <div class="section-label">Assignment-Specific Feedback</div>
+
+        <h2>Definition Assignment Feedback</h2>
+
+        <ul class="feedback-list">
+          <li>
+            The goal is not merely to provide a dictionary-style definition.
+            Explain how the concept functions inside the larger research topic.
+          </li>
+
+          <li>
+            Use an academic source to establish the definition.
+          </li>
+
+          <li>
+            The evidence should appear early enough in the paragraph to anchor
+            the discussion, but the paragraph should still begin with the
+            writer's own leading idea.
+          </li>
+
+          <li>
+            Explain misunderstandings or competing understandings surrounding
+            the term.
+          </li>
+
+          <li>
+            Discuss how that misunderstanding creates or contributes to a
+            larger social or conceptual problem.
+          </li>
+
+          <li>
+            Do not shift into first-person explanation of how the writer plans
+            to use the term later in the paper.
+          </li>
+
+          <li>
+            Avoid turning the paragraph into a miniature argumentative essay
+            about the larger topic. Keep the focus on understanding the term
+            and the consequences of misunderstanding it.
+          </li>
+
+          <li>
+            If two selected terms are largely redundant, consider whether one
+            should be replaced with a concept that adds a different layer of
+            understanding.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>Questions to Push the Definition</h3>
+
+          <ul class="prompt-list">
+            <li>What does this term mean in the scholarly conversation?</li>
+            <li>Where does misunderstanding occur?</li>
+            <li>Why does that misunderstanding matter?</li>
+            <li>How does it affect the larger issue being researched?</li>
+          </ul>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- ARGUMENT -->
+
+      <section class="section-card" id="argument">
+        <div class="section-label">Assignment-Specific Feedback</div>
+
+        <h2>Argumentative Essay Feedback</h2>
+
+        <h3>Conceptual Concern</h3>
+
+        <ul class="feedback-list">
+          <li>
+            The argument should focus on a conceptual concern: something society
+            does not adequately understand about the issue.
+          </li>
+
+          <li>
+            Avoid replacing the conceptual concern with a purely practical
+            solution-focused argument.
+          </li>
+
+          <li>
+            The thesis should identify one clear central concern rather than
+            setting up an expository discussion.
+          </li>
+        </ul>
+
+        <h3>Body Paragraphs</h3>
+
+        <ul class="feedback-list">
+          <li>
+            Claims should directly support the thesis and build toward the
+            larger argument.
+          </li>
+
+          <li>
+            Evidence should prove the claim rather than simply provide another
+            source making the same statement.
+          </li>
+
+          <li>
+            Replace repetitive evidence with more specific evidence when
+            possible.
+          </li>
+
+          <li>
+            Avoid data dumps. Double down after every piece of evidence so the
+            writer's reasoning remains central.
+          </li>
+
+          <li>
+            Warrants should explain the logic connecting the evidence to the
+            claim.
+          </li>
+
+          <li>
+            When the paper is underdeveloped, look carefully at the warrant:
+            what consequence, implication, or logical connection has not yet
+            been explained?
+          </li>
+        </ul>
+
+        <h3>Conclusion</h3>
+
+        <ul class="feedback-list">
+          <li>
+            Do not simply summarize the claims from the body.
+          </li>
+
+          <li>
+            Explain why the conceptual concern matters and what larger
+            implications follow if the problem in understanding remains
+            unresolved.
+          </li>
+
+          <li>
+            Make sure the conclusion remains connected to ideas actually
+            developed in the paper.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>Argument Questions</h3>
+
+          <ul class="prompt-list">
+            <li>What exactly is the claim?</li>
+            <li>Why should a skeptical reader take it seriously?</li>
+            <li>How does this evidence prove the point?</li>
+            <li>What assumption connects the evidence and the claim?</li>
+            <li>What happens if the misunderstanding remains unresolved?</li>
+          </ul>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- AV -->
+
+      <section class="section-card" id="alternative-viewpoint">
+        <div class="section-label">Assignment-Specific Feedback</div>
+
+        <h2>Alternative Viewpoint Feedback</h2>
+
+        <ul class="feedback-list">
+          <li>
+            The alternative viewpoint should represent a credible scholarly
+            position that genuinely tilts away from the paper's argument.
+          </li>
+
+          <li>
+            Clearly attribute the alternative position to another scholar or
+            perspective so the paragraph does not sound like the writer is
+            arguing against themself.
+          </li>
+
+          <li>
+            Explain the alternative viewpoint fairly before responding to it.
+          </li>
+
+          <li>
+            Use evidence to establish why the alternative viewpoint deserves
+            consideration.
+          </li>
+
+          <li>
+            An acknowledgement without a developed response can weaken the
+            argument because the opposing position is left unanswered.
+          </li>
+
+          <li>
+            The response must address the same issue raised by the alternative
+            viewpoint.
+          </li>
+
+          <li>
+            Use evidence in the response when needed. A rebuttal should not rely
+            on unsupported dismissal.
+          </li>
+
+          <li>
+            Fully discuss the final evidence before ending the paragraph so the
+            refutation feels complete.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>Alternative Viewpoint Questions</h3>
+
+          <ul class="prompt-list">
+            <li>Whose position is this?</li>
+            <li>Why might a reasonable reader accept it?</li>
+            <li>What evidence supports that viewpoint?</li>
+            <li>Where does your response disagree or complicate it?</li>
+            <li>Does your response address the exact same issue?</li>
+            <li>What evidence supports your response?</li>
+          </ul>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- PRESENTATION -->
+
+      <section class="section-card" id="presentation">
+        <div class="section-label">Assignment-Specific Coaching</div>
+
+        <h2>Research Presentation Coaching</h2>
+
+        <ul class="feedback-list">
+          <li>
+            The presentation should demonstrate understanding rather than
+            simply reproduce the written paper.
+          </li>
+
+          <li>
+            Focus on what the audience needs to understand most rather than
+            attempting to include every source or every detail.
+          </li>
+
+          <li>
+            Explain the research in language that an audience can follow without
+            oversimplifying the ideas.
+          </li>
+
+          <li>
+            Use the presentation to show how the major parts of the research
+            connect.
+          </li>
+
+          <li>
+            A student who understands the research should be able to explain why
+            the findings matter and respond to reasonable questions about the
+            topic.
+          </li>
+
+          <li>
+            Discussion and questions can reveal gaps in understanding that were
+            less visible while writing.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>Presentation Questions</h3>
+
+          <ul class="prompt-list">
+            <li>If you had five minutes, what does your audience most need to know?</li>
+            <li>What larger research conversation does this connect to?</li>
+            <li>What finding or idea matters most?</li>
+            <li>Why does it matter?</li>
+            <li>What question might your audience ask next?</li>
+          </ul>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- GRAMMAR -->
+
+      <section class="section-card" id="grammar">
+        <div class="section-label">Common Feedback I Leave</div>
+
+        <h2>Grammar &amp; Sentence Clarity</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Word choice concern: the selected word may be inaccurate, awkward,
+            or carry a connotation that does not match the intended tone.
+          </li>
+
+          <li>
+            Revise for concision. The same idea can be expressed in fewer words
+            without losing meaning.
+          </li>
+
+          <li>
+            Subject-verb agreement: singular subjects require singular verbs;
+            plural subjects require plural verbs.
+          </li>
+
+          <li>
+            Maintain consistent verb tense unless there is a clear reason to
+            shift.
+          </li>
+
+          <li>
+            Use an introductory comma when a dependent clause or phrase appears
+            before the independent clause.
+          </li>
+
+          <li>
+            A comma is usually not needed when the dependent clause or phrase
+            appears at the end of the sentence.
+          </li>
+
+          <li>
+            Use a comma before a coordinating conjunction when it joins two
+            independent clauses.
+          </li>
+
+          <li>
+            Do not use a comma merely because a coordinating conjunction creates
+            a compound subject or predicate.
+          </li>
+
+          <li>
+            A comma splice occurs when two independent clauses are joined with
+            only a comma.
+          </li>
+
+          <li>
+            A run-on occurs when independent clauses are joined without proper
+            punctuation or connection.
+          </li>
+
+          <li>
+            A semicolon connects two independent clauses.
+          </li>
+
+          <li>
+            When a conjunctive adverb joins two independent clauses, use a
+            semicolon before the conjunctive adverb and a comma after it.
+          </li>
+
+          <li>
+            A fragment is a phrase or dependent clause attempting to stand alone
+            as a complete sentence.
+          </li>
+
+          <li>
+            Pronouns should have clear antecedents and agree with them in number.
+          </li>
+
+          <li>
+            Parallel ideas should use parallel grammatical structures.
+          </li>
+
+          <li>
+            Passive voice can hide the actor. Revise to active voice when naming
+            the actor would improve clarity.
+          </li>
+
+          <li>
+            Appositives and nonrestrictive clauses generally require commas
+            around the nonessential information.
+          </li>
+
+          <li>
+            Be careful with prepositions when a particular word requires a
+            specific prepositional relationship.
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- APA -->
+
+      <section class="section-card" id="apa">
+        <div class="section-label">Common Feedback I Leave</div>
+
+        <h2>APA &amp; Source Use</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Every source-based idea should be clearly connected to the source
+            through correct APA citation.
+          </li>
+
+          <li>
+            Narrative citations use the author's name in the sentence.
+            Parenthetical citations place the author and year in parentheses.
+          </li>
+
+          <li>
+            With two authors, spell out <em>and</em> in narrative citations and
+            use <strong>&amp;</strong> inside parenthetical citations.
+          </li>
+
+          <li>
+            Direct quotations require a page number or another appropriate
+            locator when available.
+          </li>
+
+          <li>
+            Paraphrases and summaries still require citation.
+          </li>
+
+          <li>
+            Article titles in References entries use sentence case.
+          </li>
+
+          <li>
+            Journal titles use title case.
+          </li>
+
+          <li>
+            Do not attribute a source to an editor when no individual author is
+            listed. Follow the appropriate no-author citation pattern.
+          </li>
+
+          <li>
+            References entries should be alphabetized by the first author or
+            first identifying element.
+          </li>
+
+          <li>
+            Do not rearrange the authors inside an individual source.
+          </li>
+
+          <li>
+            Use a DOI when available. If no DOI is available and a URL is
+            required, use the appropriate URL.
+          </li>
+
+          <li>
+            References entries should be double-spaced and use hanging indents
+            without extra blank space between entries.
+          </li>
+
+          <li>
+            Check APA formatting carefully before submission. Formatting,
+            citations, and References entries should work together as one
+            documentation system.
+          </li>
+        </ul>
+
+        <div class="warning-box">
+          <h3>Source Attribution</h3>
+
+          <p>
+            Listing a source on the References page does not identify which
+            ideas came from that source inside the paper. Source-based material
+            must still be cited where it appears.
+          </p>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- REVISION QUESTIONS -->
+
+      <section class="section-card" id="revision">
+        <div class="section-label">Questions I Use to Push the Thinking</div>
+
+        <h2>Revision Coaching Questions</h2>
+
+        <ul class="prompt-list">
+          <li>How so?</li>
+          <li>Why does this matter?</li>
+          <li>To what end?</li>
+          <li>What exactly is this paragraph trying to establish?</li>
+          <li>How does this evidence prove the claim?</li>
+          <li>What does the evidence add that the claim does not already say?</li>
+          <li>What logical step are you asking the reader to make?</li>
+          <li>Can this be stated more directly?</li>
+          <li>Are these two sentences logically connected?</li>
+          <li>What belongs between these ideas so readers can follow the movement?</li>
+          <li>Is this describing the source, or actually summarizing its ideas?</li>
+          <li>What did the researchers actually find?</li>
+          <li>Why did the authors think those findings were significant?</li>
+          <li>What do these sources show when viewed together?</li>
+          <li>Where is the connection between these sources?</li>
+          <li>Is this evidence proving the claim or merely repeating it?</li>
+          <li>What makes this source useful beyond simply being peer reviewed?</li>
+          <li>What assumption connects the evidence to the claim?</li>
+          <li>What misunderstanding surrounds this term?</li>
+          <li>Why does that misunderstanding matter?</li>
+          <li>Whose alternative viewpoint is being represented?</li>
+          <li>Does the response address the same issue raised by the opposing source?</li>
+          <li>What can the reader understand at the end that they could not understand at the beginning?</li>
+          <li>How does this connect to the broader research conversation?</li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <!-- POSITIVE -->
+
+      <section class="section-card" id="positive">
+        <div class="section-label">Common Feedback I Leave</div>
+
+        <h2>Positive Feedback Language</h2>
+
+        <div class="positive-box">
+          <h3>General</h3>
+
+          <ul class="feedback-list">
+            <li>
+              The ideas are solid, and there is a clear presence of critical
+              thinking.
+            </li>
+
+            <li>
+              Your overall tone is professional and appropriate for this type
+              of academic writing.
+            </li>
+
+            <li>
+              The organization makes the discussion easy to follow.
+            </li>
+
+            <li>
+              You have a strong foundation here and the major components are
+              functioning effectively.
+            </li>
+
+            <li>
+              The revision addressed the major concerns and made this section
+              substantially stronger.
+            </li>
+          </ul>
+        </div>
+
+        <div class="positive-box">
+          <h3>Literature Review</h3>
+
+          <ul class="feedback-list">
+            <li>
+              You maintain clear connections to the authors throughout, so the
+              material consistently reads as summary rather than argument.
+            </li>
+
+            <li>
+              The summaries are specific enough to give readers a clear sense
+              of what each source found.
+            </li>
+
+            <li>
+              The topic sentences introduce the research focus without
+              prematurely announcing the findings.
+            </li>
+
+            <li>
+              The wrap-up effectively shows what the grouped research reveals
+              when viewed together.
+            </li>
+
+            <li>
+              The sources are grouped in a way that demonstrates clear
+              synthesis.
+            </li>
+          </ul>
+        </div>
+
+        <div class="positive-box">
+          <h3>Argumentative Writing</h3>
+
+          <ul class="feedback-list">
+            <li>
+              The claims clearly support the thesis and create a coherent
+              progression through the argument.
+            </li>
+
+            <li>
+              The evidence supports the claims without overshadowing your own
+              reasoning.
+            </li>
+
+            <li>
+              Your warrants clearly explain the logic connecting the evidence
+              to the claim.
+            </li>
+
+            <li>
+              The alternative viewpoint is fairly represented and the response
+              directly addresses the same issue.
+            </li>
+
+            <li>
+              The rebuttal is balanced, complete, and supported on both sides
+              of the conversation.
+            </li>
+
+            <li>
+              The conclusion moves beyond summary and effectively explains why
+              the argument matters.
+            </li>
+          </ul>
+        </div>
+
+        <div class="positive-box">
+          <h3>Research &amp; Source Use</h3>
+
+          <ul class="feedback-list">
+            <li>
+              The sources work together instead of functioning as isolated
+              pieces of evidence.
+            </li>
+
+            <li>
+              You selected evidence that actually proves the discussion rather
+              than merely repeating it.
+            </li>
+
+            <li>
+              Your explanation after the evidence keeps your own voice central
+              to the paragraph.
+            </li>
+
+            <li>
+              APA citations and References entries are accurate and consistent.
+            </li>
+          </ul>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      Internal Composition II reference for Mrs. Seay's Writing Center
+    </p>
+  </footer>
+
+</body>
+</html>
