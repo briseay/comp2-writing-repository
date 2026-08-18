@@ -1,18 +1,715 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comp II Knowledge Repository</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mrs. Seay's Writing Center</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --deep-forest: #18392b;
+            --forest: #285b43;
+            --botanical: #4d8065;
+            --sage: #e5efe8;
+            --pale-sage: #f1f6f2;
+            --cream: #fcf9f2;
+            --white: #ffffff;
+            --gold: #c6a252;
+            --soft-gold: #eadbb3;
+            --text: #272b29;
+            --muted: #626962;
+            --border: #d5ded7;
+            --shadow: 0 10px 26px rgba(24, 57, 43, 0.10);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: min(92%, 1180px);
+            margin: 0 auto;
+        }
+
+        /* =========================
+           MASTHEAD
+        ========================== */
+
+        .masthead {
+            background: linear-gradient(
+                135deg,
+                var(--deep-forest) 0%,
+                var(--forest) 58%,
+                #376b52 100%
+            );
+            color: var(--white);
+        }
+
+        .masthead-inner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 0;
+        }
+
+        .brand-logo-wrap {
+            width: 92px;
+            height: 92px;
+            flex: 0 0 92px;
+            border-radius: 50%;
+            background: var(--cream);
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .brand-logo {
+            width: 78px;
+            height: 78px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .brand-text h1 {
+            font-family: "Libre Baskerville", serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            color: var(--white);
+        }
+
+        .brand-text p {
+            margin-top: 7px;
+            font-size: 1rem;
+            color: #f4efe2;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        .main-nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .main-nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            display: block;
+            padding: 15px 16px 13px;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--deep-forest);
+            border-bottom: 3px solid transparent;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus {
+            background: var(--pale-sage);
+            border-bottom-color: var(--soft-gold);
+        }
+
+        .main-nav a[aria-current="page"] {
+            background: #f7faf7;
+            border-bottom-color: var(--forest);
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(77, 128, 101, 0.17),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 85% 75%,
+                    rgba(198, 162, 82, 0.13),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f7fbf8 0%,
+                    #e5efe8 48%,
+                    #fbf7ec 100%
+                );
+            padding: 82px 20px 74px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero::before,
+        .hero::after {
+            position: absolute;
+            font-family: Georgia, serif;
+            color: rgba(40, 91, 67, 0.10);
+            pointer-events: none;
+        }
+
+        .hero::before {
+            content: "❦";
+            font-size: 12rem;
+            left: 4%;
+            bottom: -52px;
+            transform: rotate(-16deg);
+        }
+
+        .hero::after {
+            content: "❧";
+            font-size: 13rem;
+            right: 4%;
+            bottom: -58px;
+            transform: rotate(16deg);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            margin-bottom: 12px;
+            color: var(--botanical);
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        .hero h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: clamp(2.6rem, 5vw, 4.8rem);
+            line-height: 1.12;
+            margin-bottom: 18px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            width: min(480px, 85%);
+            margin: 0 auto 18px;
+            color: var(--gold);
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: var(--gold);
+        }
+
+        .divider span {
+            font-size: 1.4rem;
+        }
+
+        .tagline {
+            font-family: "Libre Baskerville", serif;
+            font-style: italic;
+            color: var(--forest);
+            font-size: clamp(1.35rem, 2.4vw, 2rem);
+            margin-bottom: 22px;
+        }
+
+        .welcome {
+            max-width: 780px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           PROCESS STRIP
+        ========================== */
+
+        .process-strip {
+            padding: 30px 20px 8px;
+        }
+
+        .process-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .process-step {
+            background: var(--sage);
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--forest);
+            border-radius: 10px;
+            padding: 14px 12px;
+            text-align: center;
+            color: var(--deep-forest);
+            font-weight: 700;
+        }
+
+        .process-step span {
+            display: block;
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 0.86rem;
+            font-weight: 400;
+        }
+
+        /* =========================
+           RESOURCE CARDS
+        ========================== */
+
+        .resources {
+            padding: 32px 20px 28px;
+        }
+
+        .resources-heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            color: var(--deep-forest);
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .resources-heading h2 {
+            font-family: "Libre Baskerville", serif;
+            font-size: clamp(1.9rem, 3vw, 2.8rem);
+        }
+
+        .resources-heading span {
+            color: var(--gold);
+            font-size: 1.9rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 16px;
+            align-items: stretch;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 345px;
+            padding: 22px 18px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            text-decoration: none;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .card:hover,
+        .card:focus {
+            transform: translateY(-5px);
+            border-color: var(--botanical);
+            box-shadow: var(--shadow);
+        }
+
+        .card-icon {
+            display: grid;
+            place-items: center;
+            width: 92px;
+            height: 92px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background: var(--sage);
+            color: var(--deep-forest);
+            font-size: 2.6rem;
+            border: 1px solid #cfdad2;
+        }
+
+        .card h3 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: 1.28rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .card-rule {
+            width: 80%;
+            height: 2px;
+            margin-bottom: 15px;
+            background: var(--soft-gold);
+        }
+
+        .card p {
+            font-size: 0.93rem;
+            color: var(--text);
+        }
+
+        /* =========================
+           CLOSING CALLOUT
+        ========================== */
+
+        .closing-note {
+            width: min(92%, 900px);
+            margin: 28px auto 8px;
+            padding: 22px 24px;
+            background: var(--sage);
+            border-left: 7px solid var(--forest);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .closing-note h2 {
+            margin-bottom: 8px;
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: 1.25rem;
+        }
+
+        .closing-note p {
+            margin: 0;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            margin-top: 30px;
+            padding: 24px 20px;
+            background: var(--deep-forest);
+            color: #f6f1e7;
+            text-align: center;
+            border-top: 5px solid var(--gold);
+        }
+
+        footer p {
+            font-size: 0.92rem;
+            margin: 3px 0;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 1150px) {
+            .cards {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 850px) {
+            .process-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            .masthead-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+            }
+
+            .main-nav a {
+                text-align: center;
+            }
+
+            .hero {
+                padding: 60px 18px;
+            }
+
+            .hero::before,
+            .hero::after {
+                display: none;
+            }
+
+            .process-row,
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                min-height: auto;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <h1>Comp II Knowledge Repository</h1>
+    <header class="masthead">
+        <div class="container masthead-inner">
 
-  <p>
-    This repository provides resources to support research, writing, APA documentation,
-    and the major assignments in Composition II.
-  </p>
+            <div class="brand-logo-wrap">
+                <img
+                    class="brand-logo"
+                    src="finch-logo.png"
+                    alt="A finch sitting on an open book"
+                >
+            </div>
+
+            <div class="brand-text">
+                <h1>Mrs. Seay's Writing Center</h1>
+                <p>Composition II research, writing, and supporting materials</p>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="writing.html">Writing</a></li>
+            <li><a href="essay-types.html">Major Assignments</a></li>
+            <li><a href="grammar.html">Grammar</a></li>
+            <li><a href="apa.html">APA</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="hero-eyebrow">Composition II</p>
+
+                <h2>Mrs. Seay's Writing Center</h2>
+
+                <div class="divider" aria-hidden="true">
+                    <span>🪶</span>
+                </div>
+
+                <p class="tagline">
+                    Research is a conversation.
+                </p>
+
+                <p class="welcome">
+                    Welcome! These resources are designed to help you move through
+                    the research process from beginning to end: finding and
+                    evaluating scholarly sources, understanding the conversation
+                    surrounding your topic, developing your own ideas, using
+                    evidence effectively, and documenting your research responsibly.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="process-strip">
+
+            <div class="container">
+
+                <div class="process-row">
+
+                    <div class="process-step">
+                        Research
+                        <span>Find and understand the conversation.</span>
+                    </div>
+
+                    <div class="process-step">
+                        Write
+                        <span>Develop your own ideas from what you learn.</span>
+                    </div>
+
+                    <div class="process-step">
+                        Apply
+                        <span>Use those skills in major assignments.</span>
+                    </div>
+
+                    <div class="process-step">
+                        Document
+                        <span>Give sources accurate and responsible credit.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="resources">
+
+            <div class="container">
+
+                <div class="resources-heading">
+                    <span aria-hidden="true">❦</span>
+
+                    <h2>
+                        Where would you like to start?
+                    </h2>
+
+                    <span aria-hidden="true">❧</span>
+                </div>
+
+                <div class="cards">
+
+                    <a class="card" href="research.html">
+
+                        <div class="card-icon" aria-hidden="true">
+                            🔎
+                        </div>
+
+                        <h3>Research</h3>
+
+                        <div class="card-rule"></div>
+
+                        <p>
+                            Learn how research develops, search databases more
+                            effectively, evaluate scholarly sources, mine citations,
+                            and use research tools without replacing your own thinking.
+                        </p>
+
+                    </a>
+
+                    <a class="card" href="writing.html">
+
+                        <div class="card-icon" aria-hidden="true">
+                            ✒
+                        </div>
+
+                        <h3>Writing</h3>
+
+                        <div class="card-rule"></div>
+
+                        <p>
+                            Build research-based writing through academic voice,
+                            paragraph development, evidence, synthesis, transitions,
+                            introductions, conclusions, and revision.
+                        </p>
+
+                    </a>
+
+                    <a class="card" href="essay-types.html">
+
+                        <div class="card-icon" aria-hidden="true">
+                            📚
+                        </div>
+
+                        <h3>Major Assignments</h3>
+
+                        <div class="card-rule"></div>
+
+                        <p>
+                            See how the literature review, definition assignment,
+                            argumentative essay, and research presentation build on
+                            one another across the semester.
+                        </p>
+
+                    </a>
+
+                    <a class="card" href="grammar.html">
+
+                        <div class="card-icon" aria-hidden="true">
+                            ✎
+                        </div>
+
+                        <h3>Grammar</h3>
+
+                        <div class="card-rule"></div>
+
+                        <p>
+                            Review sentence structure, punctuation, sentence
+                            boundaries, agreement, apostrophes, concision, and
+                            revision strategies.
+                        </p>
+
+                    </a>
+
+                    <a class="card" href="apa.html">
+
+                        <div class="card-icon" aria-hidden="true">
+                            ❞
+                        </div>
+
+                        <h3>APA</h3>
+
+                        <div class="card-rule"></div>
+
+                        <p>
+                            Find help with APA paper formatting, in-text citations,
+                            responsible source use, References entries, and common
+                            documentation questions.
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <aside class="closing-note">
+
+            <h2>You Do Not Have to Start at the Beginning</h2>
+
+            <p>
+                This site is a reference tool. Go directly to the page or section
+                that matches the problem you are trying to solve, then come back
+                whenever you need it.
+            </p>
+
+        </aside>
+
+    </main>
+
+    <footer>
+        <p><strong>Mrs. Seay's Writing Center</strong></p>
+        <p>Created by Brittany Seay</p>
+        <p>Version 1.0 • August 2026</p>
+    </footer>
 
 </body>
 </html>
