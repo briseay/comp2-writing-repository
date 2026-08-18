@@ -15,25 +15,20 @@
     >
 
     <style>
-:root {
-    --deep-forest: #12372A;
-    --forest: #1F5A43;
-    --fresh-green: #397A5A;
-    --soft-forest: #DCEBE1;
-    --pale-sage: #EEF5F0;
-    --ivory: #FFFDF7;
-    --warm-white: #FFFFFF;
-    --gold: #C8A84E;
-    --soft-gold: #F2E7BE;
-    --text: #292D2B;
-    --muted-text: #646964;
-    --border: #D8E1DA;
-    --light-gray: #F6F8F6;
-    --good-example: #EDF6F0;
-    --good-border: #7EA88A;
-    --warning-example: #FFF9E8;
-    --warning-border: #C8A84E;
-}
+        :root {
+            --deep-forest: #18392b;
+            --forest: #285b43;
+            --botanical: #4d8065;
+            --sage: #e5efe8;
+            --pale-sage: #f1f6f2;
+            --cream: #fcf9f2;
+            --white: #ffffff;
+            --gold: #c6a252;
+            --soft-gold: #eadbb3;
+            --text: #272b29;
+            --muted: #626962;
+            --border: #d5ded7;
+        }
 
         * {
             box-sizing: border-box;
@@ -48,7 +43,7 @@
         body {
             font-family: "Inter", sans-serif;
             color: var(--text);
-            background: var(--warm-white);
+            background: var(--cream);
             line-height: 1.7;
         }
 
@@ -57,227 +52,268 @@
         }
 
         .container {
-            width: min(92%, 1120px);
+            width: min(92%, 980px);
             margin: 0 auto;
         }
 
-       header {
-    background: rgba(255, 255, 255, 0.98);
-    border-bottom: 5px solid var(--gold);
-}
+        /* =========================
+           MASTHEAD
+        ========================== */
 
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-            padding: 22px 0;
+        .masthead {
+            background: linear-gradient(
+                135deg,
+                var(--deep-forest) 0%,
+                var(--forest) 58%,
+                #376b52 100%
+            );
+            color: var(--white);
         }
 
-        .brand {
+        .masthead-inner {
             display: flex;
             align-items: center;
-            gap: 16px;
-            text-decoration: none;
-            min-width: max-content;
+            gap: 20px;
+            padding: 30px 0;
+        }
+
+        .brand-logo-wrap {
+            width: 92px;
+            height: 92px;
+            flex: 0 0 92px;
+            border-radius: 50%;
+            background: var(--cream);
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
         .brand-logo {
-            width: 76px;
-            height: 76px;
-            object-fit: cover;
-            border-radius: 24px;
+            width: 78px;
+            height: 78px;
+            object-fit: contain;
+            border-radius: 50%;
         }
 
         .brand-text h1 {
             font-family: "Libre Baskerville", serif;
-            font-size: clamp(1.25rem, 2.2vw, 2rem);
-            color: var(--deep-forest);
+            font-size: clamp(2rem, 4vw, 3rem);
             line-height: 1.15;
+            color: var(--white);
         }
 
         .brand-text p {
-            margin-top: 5px;
-            font-family: "Libre Baskerville", serif;
-            font-style: italic;
-            color: var(--forest);
+            margin-top: 7px;
             font-size: 1rem;
+            color: #f4efe2;
         }
 
-        nav ul {
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        .main-nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .main-nav ul {
             display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 24px;
+            justify-content: center;
+            align-items: stretch;
             list-style: none;
             flex-wrap: wrap;
         }
 
-        nav a {
-            position: relative;
+        .main-nav a {
+            display: block;
+            padding: 15px 16px 13px;
             text-decoration: none;
+            font-weight: 600;
             color: var(--deep-forest);
-            font-family: "Libre Baskerville", serif;
-            font-size: 0.92rem;
-            padding: 8px 0;
+            border-bottom: 3px solid transparent;
+            transition: background 0.2s ease, border-color 0.2s ease;
         }
 
-        nav a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 3px;
-            background: var(--gold);
-            transition: width 0.2s ease;
+        .main-nav a:hover {
+            background: var(--pale-sage);
+            border-bottom-color: var(--soft-gold);
         }
 
-        nav a:hover::after,
-        nav a.active::after {
-            width: 100%;
+        .main-nav a.active {
+            background: #f7faf7;
+            border-bottom-color: var(--forest);
         }
 
-       .page-heading {
-    background: linear-gradient(
-        135deg,
-        #F8FCF9 0%,
-        #DCEBE1 50%,
-        #F8FCF9 100%
-    );
-    text-align: center;
-    padding: 62px 20px;
-}
-
-        .page-heading h2 {
-            font-family: "Libre Baskerville", serif;
-            color: var(--deep-forest);
-            font-size: clamp(2.4rem, 5vw, 4rem);
-            line-height: 1.2;
-        }
-
-        .page-heading p {
-            margin-top: 14px;
-            font-family: "Libre Baskerville", serif;
-            font-style: italic;
-            color: var(--forest);
-            font-size: 1.2rem;
-        }
+        /* =========================
+           MAIN PAGE
+        ========================== */
 
         main {
-            padding: 46px 0 70px;
+            padding: 38px 0 70px;
         }
 
-        .intro-box {
-            background: var(--ivory);
-            border: 1px solid var(--soft-gold);
-            border-left: 7px solid var(--gold);
-            border-radius: 0 12px 12px 0;
-            padding: 24px 27px;
-            margin-bottom: 32px;
+        .eyebrow {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--botanical);
+            margin-bottom: 8px;
         }
 
-        .intro-box p:last-child {
+        .page-title {
+            font-family: "Libre Baskerville", serif;
+            font-size: clamp(2.3rem, 5vw, 3.5rem);
+            color: var(--deep-forest);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .page-intro {
+            max-width: 900px;
+            font-size: 1.03rem;
+            margin-bottom: 26px;
+        }
+
+        /* =========================
+           OPENING CALLOUT
+        ========================== */
+
+        .opening-callout {
+            background: var(--sage);
+            border-left: 7px solid var(--forest);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .opening-callout h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-forest);
+            font-size: 1.2rem;
+            margin-bottom: 7px;
+        }
+
+        .opening-callout p:last-child {
             margin-bottom: 0;
         }
 
+        /* =========================
+           TABLE OF CONTENTS
+        ========================== */
+
         .table-of-contents {
-            background: var(--pale-sage);
+            background: var(--sage);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 28px 32px;
-            margin-bottom: 46px;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0 34px;
         }
 
         .table-of-contents h2 {
             font-family: "Libre Baskerville", serif;
             color: var(--deep-forest);
-            font-size: 1.6rem;
+            font-size: 1.25rem;
             margin-bottom: 14px;
         }
 
-        .table-of-contents ol {
-            padding-left: 24px;
-            columns: 2;
-            column-gap: 50px;
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
         }
 
-        .table-of-contents li {
-            margin-bottom: 8px;
-            break-inside: avoid;
-        }
-
-        .table-of-contents a {
+        .toc-grid a {
+            display: block;
+            background: var(--white);
+            border: 1px solid #ccd8cf;
+            border-radius: 7px;
+            padding: 11px 12px;
+            text-decoration: none;
             font-weight: 600;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 3px;
+            font-size: 0.92rem;
+            color: var(--deep-forest);
+            transition: transform 0.15s ease, border-color 0.15s ease;
         }
+
+        .toc-grid a:hover {
+            border-color: var(--botanical);
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           CONTENT
+        ========================== */
 
         .content-section {
+            margin: 42px 0 58px;
             scroll-margin-top: 30px;
-            margin-bottom: 64px;
         }
 
         .content-section > h2 {
             font-family: "Libre Baskerville", serif;
             color: var(--deep-forest);
-            font-size: clamp(1.8rem, 3vw, 2.45rem);
-            line-height: 1.3;
+            font-size: clamp(1.75rem, 3vw, 2.35rem);
+            border-bottom: 3px solid var(--soft-gold);
             padding-bottom: 10px;
-            border-bottom: 2px solid var(--gold);
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .content-section h3 {
             font-family: "Libre Baskerville", serif;
             color: var(--forest);
-            font-size: 1.35rem;
-            margin: 28px 0 10px;
+            font-size: 1.3rem;
+            margin: 26px 0 9px;
         }
 
         .content-section h4 {
             color: var(--deep-forest);
-            font-size: 1.05rem;
-            margin: 20px 0 7px;
+            margin: 19px 0 7px;
         }
 
         .content-section p {
-            margin-bottom: 16px;
+            margin-bottom: 15px;
         }
 
         .content-section ul,
         .content-section ol {
             padding-left: 27px;
-            margin: 12px 0 20px;
+            margin: 12px 0 19px;
         }
 
         .content-section li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-    .section-label {
-    display: inline-block;
-    background: var(--soft-forest);
-    color: var(--deep-forest);
-    font-weight: 700;
-    padding: 7px 13px;
-    border-radius: 7px;
-    margin-bottom: 18px;
-}
+        .section-label {
+            display: inline-block;
+            background: var(--sage);
+            color: var(--forest);
+            font-weight: 700;
+            padding: 6px 11px;
+            border-radius: 6px;
+            margin-bottom: 17px;
+        }
+
+        /* =========================
+           CALLOUTS
+        ========================== */
 
         .quick-tip {
-            background: var(--pale-sage);
-            border-left: 7px solid var(--forest);
-            padding: 20px 23px;
-            margin: 24px 0;
-            border-radius: 0 10px 10px 0;
+            background: var(--sage);
+            border-left: 6px solid var(--botanical);
+            border-radius: 0 9px 9px 0;
+            padding: 19px 22px;
+            margin: 22px 0;
         }
 
         .quick-tip h3 {
             margin: 0 0 7px;
-            font-family: "Libre Baskerville", serif;
             color: var(--deep-forest);
-            font-size: 1.1rem;
+            font-size: 1.08rem;
         }
 
         .quick-tip p:last-child {
@@ -285,95 +321,104 @@
         }
 
         .gold-tip {
-            background: var(--warning-example);
-            border-left-color: var(--warning-border);
+            background: #fbf6e8;
+            border-left-color: var(--gold);
         }
 
         .subsection-box {
-            background: #fafaf6;
+            background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 22px 24px;
-            margin: 22px 0;
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin: 20px 0;
         }
 
-        .subsection-box h3 {
-            margin-top: 0;
+        .subsection-box p:last-child {
+            margin-bottom: 0;
         }
+
+        /* =========================
+           COMPARISON
+        ========================== */
 
         .comparison {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
-            gap: 14px;
             align-items: center;
+            gap: 14px;
             margin: 18px 0 24px;
         }
 
-        .comparison div {
-            background: var(--light-gray);
-            border-radius: 8px;
-            padding: 16px 18px;
+        .comparison > div:not(.arrow) {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--botanical);
+            border-radius: 9px;
+            padding: 17px 18px;
         }
 
         .comparison .arrow {
-            background: none;
             color: var(--gold);
-            font-weight: 700;
             font-size: 1.5rem;
-            padding: 0;
+            font-weight: 700;
         }
 
-        .comparison strong {
-            color: var(--deep-forest);
-        }
+        /* =========================
+           PROCESS FLOW
+        ========================== */
 
         .process-flow {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin: 24px 0;
-            align-items: stretch;
+            gap: 9px;
+            margin: 22px 0;
         }
 
         .process-step {
-            background: var(--pale-sage);
+            background: var(--sage);
             border: 1px solid var(--border);
-            border-top: 5px solid var(--gold);
-            border-radius: 10px;
-            padding: 17px 14px;
+            border-top: 5px solid var(--forest);
+            border-radius: 9px;
+            padding: 15px 11px;
             text-align: center;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--deep-forest);
         }
 
-        .process-arrow {
-            display: none;
-        }
+        /* =========================
+           MINING FLOW
+        ========================== */
 
         .mining-loop {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin: 26px 0;
+            align-items: center;
+            gap: 9px;
+            margin: 25px 0;
         }
 
         .mining-step {
-            background: var(--pale-sage);
+            background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 9px;
-            padding: 13px 16px;
+            border-bottom: 4px solid var(--botanical);
+            border-radius: 8px;
+            padding: 12px 14px;
+            text-align: center;
             font-weight: 600;
             color: var(--deep-forest);
-            text-align: center;
         }
 
         .mining-arrow {
             color: var(--gold);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
         }
+
+        /* =========================
+           CHECKLIST
+        ========================== */
 
         .checklist {
             list-style: none;
@@ -390,34 +435,26 @@
             position: absolute;
             left: 0;
             color: var(--forest);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
         }
 
-        .conversation-card {
-            background: var(--ivory);
-            border: 1px solid var(--soft-gold);
-            border-radius: 12px;
-            padding: 22px 24px;
-            margin: 22px 0;
-        }
-
-        .conversation-card h3 {
-            margin-top: 0;
-            color: var(--deep-forest);
-        }
+        /* =========================
+           TOOL CARDS
+        ========================== */
 
         .tool-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+            gap: 16px;
             margin: 22px 0;
         }
 
         .tool-card {
-            background: #fafaf6;
+            background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 21px 22px;
+            border-top: 5px solid var(--botanical);
+            border-radius: 10px;
+            padding: 19px 20px;
         }
 
         .tool-card h3 {
@@ -429,75 +466,93 @@
             margin-bottom: 0;
         }
 
+        .conversation-card {
+            background: var(--sage);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 19px 22px;
+            margin: 22px 0;
+        }
+
+        .conversation-card h3 {
+            margin-top: 0;
+        }
+
         .back-to-top {
             display: inline-block;
-            margin-top: 12px;
+            margin-top: 10px;
             font-weight: 600;
             text-decoration: none;
         }
 
+        /* =========================
+           RELATED RESOURCES
+        ========================== */
+
         .related-resources {
-            background: var(--pale-sage);
+            background: var(--sage);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 24px 28px;
-            margin-top: 12px;
+            border-radius: 12px;
+            padding: 22px 25px;
+            margin-top: 34px;
         }
 
         .related-resources h2 {
             font-family: "Libre Baskerville", serif;
             color: var(--deep-forest);
-            font-size: 1.45rem;
-            margin-bottom: 12px;
+            font-size: 1.35rem;
+            margin-bottom: 10px;
         }
 
         .related-resources ul {
-            padding-left: 24px;
+            padding-left: 23px;
         }
 
         .related-resources li {
-            margin-bottom: 8px;
+            margin-bottom: 7px;
         }
 
         .source-note {
-            margin-top: 38px;
-            padding-top: 22px;
+            margin-top: 28px;
+            padding-top: 18px;
             border-top: 1px solid var(--border);
-            font-size: 0.9rem;
-            color: var(--muted-text);
+            font-size: 0.88rem;
+            color: var(--muted);
         }
 
         .source-note h2 {
             font-family: "Libre Baskerville", serif;
             color: var(--deep-forest);
-            font-size: 1.15rem;
-            margin-bottom: 10px;
+            font-size: 1rem;
+            margin-bottom: 8px;
         }
+
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
-    padding: 22px 20px;
-    background: var(--deep-forest);
-    color: var(--ivory);
-    text-align: center;
-    border-top: 4px solid var(--gold);
-}
-
-footer p {
-    font-size: 0.95rem;
-    margin: 3px 0;
-}
-
-        @media (max-width: 1100px) {
-            .header-inner {
-                flex-direction: column;
-            }
-
-            nav ul {
-                justify-content: center;
-            }
+            background: var(--deep-forest);
+            color: #f6f1e7;
+            border-top: 5px solid var(--gold);
+            text-align: center;
+            padding: 24px 20px;
         }
 
+        footer p {
+            margin: 3px 0;
+            font-size: 0.92rem;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
         @media (max-width: 850px) {
+            .toc-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .process-flow {
                 grid-template-columns: 1fr;
             }
@@ -507,35 +562,22 @@ footer p {
             }
         }
 
-        @media (max-width: 720px) {
-            .brand {
-                min-width: 0;
+        @media (max-width: 700px) {
+            .masthead-inner {
+                flex-direction: column;
+                text-align: center;
             }
 
-            .brand-logo {
-                width: 62px;
-                height: 62px;
-                border-radius: 19px;
+            .main-nav ul {
+                flex-direction: column;
             }
 
-            nav ul {
-                gap: 12px 18px;
+            .main-nav a {
+                text-align: center;
             }
 
-            nav a {
-                font-size: 0.87rem;
-            }
-
-            .page-heading {
-                padding: 48px 18px;
-            }
-
-            .table-of-contents {
-                padding: 23px;
-            }
-
-            .table-of-contents ol {
-                columns: 1;
+            .toc-grid {
+                grid-template-columns: 1fr;
             }
 
             .comparison {
@@ -560,58 +602,58 @@ footer p {
 
 <body id="top">
 
-    <header>
-        <div class="container header-inner">
+    <header class="masthead">
+        <div class="container masthead-inner">
 
-            <a class="brand" href="index.html">
+            <div class="brand-logo-wrap">
                 <img
                     class="brand-logo"
                     src="finch-logo.png"
                     alt="A finch sitting on an open book"
                 >
+            </div>
 
-                <div class="brand-text">
-                    <h1>Mrs. Seay's Writing Center</h1>
-                    <p>Writing is a process.</p>
-                </div>
-            </a>
-
-            <nav aria-label="Main navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a class="active" href="research.html">Research</a></li>
-                    <li><a href="writing.html">Writing</a></li>
-                    <li><a href="essay-types.html">Major Assignments</a></li>
-                    <li><a href="grammar.html">Grammar</a></li>
-                    <li><a href="apa.html">APA</a></li>
-                </ul>
-            </nav>
+            <div class="brand-text">
+                <h1>Mrs. Seay's Writing Center</h1>
+                <p>Composition II research, writing, and supporting materials</p>
+            </div>
 
         </div>
     </header>
 
-    <section class="page-heading">
-        <h2>Research</h2>
-        <p>Learn the conversation. Follow the evidence. Let the question evolve.</p>
-    </section>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="research.html">Research</a></li>
+            <li><a href="writing.html">Writing</a></li>
+            <li><a href="essay-types.html">Major Assignments</a></li>
+            <li><a href="grammar.html">Grammar</a></li>
+            <li><a href="apa.html">APA</a></li>
+        </ul>
+    </nav>
 
     <main>
         <div class="container">
 
-            <div class="intro-box">
-                <p>
-                    Research is not the process of finding a required number of
-                    sources and forcing them into a paper. It is a process of
-                    learning. You begin with a question, discover what scholars
-                    already know, encounter new ideas and vocabulary, adjust your
-                    thinking, and continue searching.
-                </p>
+            <p class="eyebrow">Composition II</p>
+
+            <h1 class="page-title">Research</h1>
+
+            <p class="page-intro">
+                Research is more than locating information. It is the process of
+                learning how scholars talk about an issue, following evidence,
+                recognizing connections, and allowing what you discover to reshape
+                what you want to understand.
+            </p>
+
+            <div class="opening-callout">
+                <h2>Research Is a Conversation</h2>
 
                 <p>
-                    Good research rarely moves in a perfectly straight line. Expect
-                    to revise searches, abandon sources, follow citations, change
-                    directions, and discover questions you did not know enough to
-                    ask when you began.
+                    Good research rarely moves in a perfectly straight line.
+                    Expect to revise searches, abandon sources, follow citations,
+                    change directions, and discover questions you did not know
+                    enough to ask when you began.
                 </p>
             </div>
 
@@ -621,45 +663,19 @@ footer p {
             >
                 <h2>On This Page</h2>
 
-                <ol>
-                    <li>
-                        <a href="#process">
-                            Research Is a Process
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#searching">
-                            Searching Like a Researcher
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#mining">
-                            Reading &amp; Mining Scholarly Sources
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#evaluating">
-                            Choosing &amp; Evaluating Sources
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#tools">
-                            Research Tools, AI &amp; Your Own Thinking
-                        </a>
-                    </li>
-                </ol>
+                <div class="toc-grid">
+                    <a href="#process">Research Is a Process</a>
+                    <a href="#searching">Searching Like a Researcher</a>
+                    <a href="#mining">Reading &amp; Mining Scholarly Sources</a>
+                    <a href="#evaluating">Choosing &amp; Evaluating Sources</a>
+                    <a href="#tools">Research Tools, AI &amp; Your Own Thinking</a>
+                </div>
             </nav>
 
-            <!-- SECTION 1 -->
+            <!-- RESEARCH IS A PROCESS -->
 
-            <section
-                class="content-section"
-                id="process"
-            >
+            <section class="content-section" id="process">
+
                 <h2>Research Is a Process</h2>
 
                 <p class="section-label">
@@ -692,7 +708,7 @@ footer p {
                         How can schools reduce bullying?
                     </div>
 
-                    <div class="arrow" aria-hidden="true">→</div>
+                    <div class="arrow">→</div>
 
                     <div>
                         <strong>Conceptual:</strong><br>
@@ -719,38 +735,21 @@ footer p {
                 </p>
 
                 <div class="process-flow">
-                    <div class="process-step">
-                        Identify a Practical Problem
-                    </div>
-
-                    <div class="process-step">
-                        Ask Why
-                    </div>
-
-                    <div class="process-step">
-                        Identify What You Do Not Understand
-                    </div>
-
-                    <div class="process-step">
-                        Form a Conceptual Concern
-                    </div>
-
-                    <div class="process-step">
-                        Research for Understanding
-                    </div>
+                    <div class="process-step">Identify a Practical Problem</div>
+                    <div class="process-step">Ask Why</div>
+                    <div class="process-step">Identify What You Do Not Understand</div>
+                    <div class="process-step">Form a Conceptual Concern</div>
+                    <div class="process-step">Research for Understanding</div>
                 </div>
 
                 <h3>The “So What?” Test</h3>
 
-                <p>
-                    A useful research question should matter beyond your personal
-                    curiosity. Ask yourself:
-                </p>
-
                 <div class="subsection-box">
                     <p>
-                        <strong>If we do not understand this, what larger or more
-                        important question remains unanswered?</strong>
+                        <strong>
+                            If we do not understand this, what larger or more
+                            important question remains unanswered?
+                        </strong>
                     </p>
                 </div>
 
@@ -763,51 +762,25 @@ footer p {
                 <h3>Is My Topic Ready?</h3>
 
                 <ul class="checklist">
-                    <li>
-                        My topic raises a meaningful “why” or “how” question.
-                    </li>
-
-                    <li>
-                        There is something about this issue that requires deeper
-                        understanding.
-                    </li>
-
-                    <li>
-                        The topic is broad enough to support sustained research but
-                        narrow enough to become focused.
-                    </li>
-
-                    <li>
-                        Scholarly research exists on the topic.
-                    </li>
-
-                    <li>
-                        The topic contains multiple angles, causes, effects,
-                        perspectives, or sub-issues.
-                    </li>
-
-                    <li>
-                        The topic connects to a larger social, cultural, scientific,
-                        political, educational, technological, or other system.
-                    </li>
-
-                    <li>
-                        I am interested enough in the topic to spend significant
-                        time reading and thinking about it.
-                    </li>
+                    <li>My topic raises a meaningful “why” or “how” question.</li>
+                    <li>There is something about this issue that requires deeper understanding.</li>
+                    <li>The topic can become focused while still supporting sustained research.</li>
+                    <li>Scholarly research exists on the topic.</li>
+                    <li>The topic contains multiple angles, causes, effects, or perspectives.</li>
+                    <li>The topic connects to a larger system or context.</li>
+                    <li>I am interested enough in the topic to spend significant time with it.</li>
                 </ul>
 
                 <h3>Expect Your Question to Change</h3>
 
                 <p>
                     Your first research question is a starting point, not a
-                    contract. As you read, you will learn new terminology, encounter
-                    new perspectives, discover disagreements, and notice issues you
-                    did not know existed.
+                    contract. As you read, you will learn new terminology,
+                    encounter new perspectives, discover disagreements, and notice
+                    issues you did not know existed.
                 </p>
 
                 <p>
-                    Those discoveries should influence what you search for next.
                     Changing your question because you learned something is not a
                     research failure. It is evidence that research is working.
                 </p>
@@ -815,12 +788,10 @@ footer p {
                 <a class="back-to-top" href="#top">Back to top ↑</a>
             </section>
 
-            <!-- SECTION 2 -->
+            <!-- SEARCHING -->
 
-            <section
-                class="content-section"
-                id="searching"
-            >
+            <section class="content-section" id="searching">
+
                 <h2>Searching Like a Researcher</h2>
 
                 <p class="section-label">
@@ -845,7 +816,7 @@ footer p {
                         in the United States?
                     </div>
 
-                    <div class="arrow" aria-hidden="true">→</div>
+                    <div class="arrow">→</div>
 
                     <div>
                         <strong>Database Language:</strong><br>
@@ -866,9 +837,7 @@ footer p {
                     </p>
                 </div>
 
-                <p>
-                    The important concepts might be:
-                </p>
+                <p>The important concepts might be:</p>
 
                 <ul>
                     <li>food insecurity</li>
@@ -878,35 +847,23 @@ footer p {
                 </ul>
 
                 <p>
-                    Words such as <em>how, does, affect, differently, than,</em> and
-                    <em>in</em> may help form a readable question, but they are
-                    usually not the ideas the database needs.
+                    Words such as <em>how, does, affect, differently, than,</em>
+                    and <em>in</em> help form a readable question, but they are
+                    usually not the concepts the database needs.
                 </p>
 
                 <h3>Use Exact Phrases When They Matter</h3>
 
                 <p>
-                    Quotation marks tell a database to search for words together as
-                    a phrase.
+                    Quotation marks tell a database to search for words together
+                    as a phrase.
                 </p>
 
                 <div class="comparison">
-                    <div>
-                        food insecurity
-                    </div>
-
-                    <div class="arrow" aria-hidden="true">→</div>
-
-                    <div>
-                        "food insecurity"
-                    </div>
+                    <div>food insecurity</div>
+                    <div class="arrow">→</div>
+                    <div>"food insecurity"</div>
                 </div>
-
-                <p>
-                    Without quotation marks, a search system may treat the words
-                    separately. With quotation marks, you are asking it to look for
-                    the specific phrase.
-                </p>
 
                 <h3>Combine Important Concepts</h3>
 
@@ -916,17 +873,9 @@ footer p {
                 </p>
 
                 <div class="subsection-box">
-                    <p>
-                        "food insecurity" AND gender
-                    </p>
-
-                    <p>
-                        "food insecurity" AND women AND "United States"
-                    </p>
-
-                    <p>
-                        "food insecurity" AND caregivers AND gender
-                    </p>
+                    <p>"food insecurity" AND gender</p>
+                    <p>"food insecurity" AND women AND "United States"</p>
+                    <p>"food insecurity" AND caregivers AND gender</p>
                 </div>
 
                 <h3>Your First Search Is Not Your Last Search</h3>
@@ -937,51 +886,25 @@ footer p {
                     first described the topic.
                 </p>
 
-                <p>
-                    Pay attention to words and phrases that repeatedly appear in
-                    article titles, abstracts, keywords, and introductions. Those
-                    terms can help you search more precisely.
-                </p>
-
                 <div class="quick-tip">
                     <h3>Let the Research Teach You Its Language</h3>
 
                     <p>
-                        If several useful sources repeatedly use a phrase you had
-                        never considered, try searching that phrase. The vocabulary
-                        used by scholars can lead you deeper into the conversation.
+                        Pay attention to words and phrases that repeatedly appear
+                        in article titles, abstracts, keywords, and introductions.
+                        Those terms can lead you deeper into the conversation.
                     </p>
                 </div>
 
                 <h3>Searching Is Reiterative</h3>
 
                 <div class="process-flow">
-                    <div class="process-step">
-                        Search
-                    </div>
-
-                    <div class="process-step">
-                        Read
-                    </div>
-
-                    <div class="process-step">
-                        Learn New Language
-                    </div>
-
-                    <div class="process-step">
-                        Revise the Search
-                    </div>
-
-                    <div class="process-step">
-                        Search Again
-                    </div>
+                    <div class="process-step">Search</div>
+                    <div class="process-step">Read</div>
+                    <div class="process-step">Learn New Language</div>
+                    <div class="process-step">Revise the Search</div>
+                    <div class="process-step">Search Again</div>
                 </div>
-
-                <p>
-                    Some searches will produce thousands of results. Some will
-                    produce almost nothing. Some will lead to an entirely different
-                    angle than the one you expected.
-                </p>
 
                 <p>
                     Your job is not to create the perfect search on your first try.
@@ -992,12 +915,10 @@ footer p {
                 <a class="back-to-top" href="#top">Back to top ↑</a>
             </section>
 
-            <!-- SECTION 3 -->
+            <!-- MINING -->
 
-            <section
-                class="content-section"
-                id="mining"
-            >
+            <section class="content-section" id="mining">
+
                 <h2>Reading &amp; Mining Scholarly Sources</h2>
 
                 <p class="section-label">
@@ -1021,7 +942,7 @@ footer p {
                 <div class="mining-loop">
                     <div class="mining-step">Useful Source</div>
                     <div class="mining-arrow">→</div>
-                    <div class="mining-step">Important Idea or Citation</div>
+                    <div class="mining-step">Important Citation</div>
                     <div class="mining-arrow">→</div>
                     <div class="mining-step">Reference Entry</div>
                     <div class="mining-arrow">→</div>
@@ -1030,45 +951,24 @@ footer p {
                     <div class="mining-step">New Ideas &amp; Vocabulary</div>
                 </div>
 
-                <p>
-                    Then the process begins again.
-                </p>
-
                 <h3>Look at What the Author Cites</h3>
 
                 <p>
                     When you encounter an important claim, definition, statistic,
                     or idea, look for the citation attached to it. That citation may
-                    lead you to the research where the idea was originally
-                    developed, tested, or discussed.
+                    lead you to research where the idea was originally developed,
+                    tested, or discussed.
                 </p>
 
                 <div class="conversation-card">
                     <h3>Ask Yourself</h3>
 
                     <ul>
-                        <li>
-                            Did this sentence introduce an idea I want to understand
-                            better?
-                        </li>
-
-                        <li>
-                            Is this claim supported by another scholar?
-                        </li>
-
-                        <li>
-                            Do several authors cite the same study?
-                        </li>
-
-                        <li>
-                            Does the same scholar keep appearing across multiple
-                            sources?
-                        </li>
-
-                        <li>
-                            Is there terminology here that could improve my next
-                            database search?
-                        </li>
+                        <li>Did this introduce an idea I want to understand better?</li>
+                        <li>Is this claim supported by another scholar?</li>
+                        <li>Do several authors cite the same study?</li>
+                        <li>Does the same scholar keep appearing?</li>
+                        <li>Could this terminology improve my next search?</li>
                     </ul>
                 </div>
 
@@ -1098,23 +998,18 @@ footer p {
                 <h3>A Source Can Help Even If You Do Not Use It</h3>
 
                 <p>
-                    Sometimes an article is too technical, too narrow, or not useful
-                    enough to include in your final project. That does not mean the
-                    time spent opening it was wasted.
-                </p>
-
-                <p>
-                    Its introduction, background section, or discussion of previous
-                    scholarship may still help you:
+                    Sometimes an article is too technical, too narrow, or simply
+                    not useful enough to include in the final project. Its
+                    introduction or references may still teach you something.
                 </p>
 
                 <ul>
-                    <li>learn important vocabulary;</li>
-                    <li>identify major researchers;</li>
-                    <li>locate foundational studies;</li>
-                    <li>discover competing perspectives;</li>
-                    <li>find better search terms; or</li>
-                    <li>follow references to sources that are more useful.</li>
+                    <li>Learn important vocabulary.</li>
+                    <li>Identify major researchers.</li>
+                    <li>Locate foundational studies.</li>
+                    <li>Discover competing perspectives.</li>
+                    <li>Find better search terms.</li>
+                    <li>Follow references to more useful sources.</li>
                 </ul>
 
                 <div class="quick-tip gold-tip">
@@ -1129,43 +1024,22 @@ footer p {
 
                 <h3>Read Strategically Before Reading Deeply</h3>
 
-                <p>
-                    Before committing to a long scholarly article, determine whether
-                    it has a serious chance of helping your research.
-                </p>
-
                 <ul class="checklist">
                     <li>I read the title carefully.</li>
                     <li>I read the abstract or summary.</li>
                     <li>I reviewed the introduction.</li>
-                    <li>
-                        I understand the general question or issue the article
-                        addresses.
-                    </li>
-                    <li>
-                        The article connects meaningfully to my developing research
-                        concern.
-                    </li>
-                    <li>
-                        I identified ideas, terminology, or citations worth
-                        following.
-                    </li>
+                    <li>I understand the general issue the article addresses.</li>
+                    <li>The article connects to my developing research concern.</li>
+                    <li>I identified ideas, terminology, or citations worth following.</li>
                 </ul>
-
-                <p>
-                    After that initial review, decide whether the article deserves
-                    deeper reading and annotation.
-                </p>
 
                 <a class="back-to-top" href="#top">Back to top ↑</a>
             </section>
 
-            <!-- SECTION 4 -->
+            <!-- EVALUATING -->
 
-            <section
-                class="content-section"
-                id="evaluating"
-            >
+            <section class="content-section" id="evaluating">
+
                 <h2>Choosing &amp; Evaluating Sources</h2>
 
                 <p class="section-label">
@@ -1179,13 +1053,6 @@ footer p {
                 </p>
 
                 <h3>Different Sources Serve Different Purposes</h3>
-
-                <p>
-                    Not every credible source performs the same job. Some sources
-                    provide original evidence. Others interpret that evidence.
-                    Some establish background knowledge. Others contribute directly
-                    to an ongoing scholarly debate.
-                </p>
 
                 <h4>Primary Sources</h4>
 
@@ -1207,7 +1074,7 @@ footer p {
                 <p>
                     Scholarly sources are written for an academic audience and
                     participate in a larger research conversation. Peer-reviewed
-                    scholarship has also gone through review by other knowledgeable
+                    scholarship has also been evaluated by other knowledgeable
                     members of the field before publication.
                 </p>
 
@@ -1215,10 +1082,9 @@ footer p {
                     <h3>Peer Review Helps, But You Still Have to Think</h3>
 
                     <p>
-                        Peer review gives you an important layer of scholarly
+                        Peer review provides an important layer of scholarly
                         vetting. It does not mean every peer-reviewed source is
-                        automatically relevant to your question or equally useful
-                        for your project.
+                        automatically relevant or equally useful for your project.
                     </p>
                 </div>
 
@@ -1226,12 +1092,8 @@ footer p {
 
                 <p>
                     A website ending in <em>.org</em>, <em>.edu</em>, or
-                    <em>.com</em> gives you only limited information. Credibility
-                    requires a closer look.
-                </p>
-
-                <p>
-                    When evaluating a source, consider:
+                    <em>.com</em> provides only limited information about its
+                    credibility.
                 </p>
 
                 <ul class="checklist">
@@ -1240,48 +1102,22 @@ footer p {
                     <li>Where was the source published?</li>
                     <li>When was it published?</li>
                     <li>What evidence does the author use?</li>
-                    <li>What other credible sources does the author cite?</li>
-                    <li>Can you identify a clear purpose or possible bias?</li>
-                    <li>Is the information current enough for your topic?</li>
-                    <li>Does the source actually address your research concern?</li>
+                    <li>What credible sources does the author cite?</li>
+                    <li>Can I identify a purpose or possible bias?</li>
+                    <li>Is the information current enough for my topic?</li>
+                    <li>Does the source actually address my research concern?</li>
                 </ul>
 
                 <h3>Before You Read Twenty Pages...</h3>
 
-                <p>
-                    Do some triage first.
-                </p>
-
                 <div class="subsection-box">
                     <ol>
-                        <li>
-                            Read the title and determine what the article appears to
-                            focus on.
-                        </li>
-
-                        <li>
-                            Read the abstract to understand the article's purpose,
-                            scope, and major focus.
-                        </li>
-
-                        <li>
-                            Read enough of the introduction to determine whether the
-                            discussion connects to your research.
-                        </li>
-
-                        <li>
-                            Look at the article type and make sure it meets the
-                            requirements of your assignment.
-                        </li>
-
-                        <li>
-                            Scan the references and notice what scholarship the
-                            article builds upon.
-                        </li>
-
-                        <li>
-                            Decide whether deeper reading is worth your time.
-                        </li>
+                        <li>Read the title.</li>
+                        <li>Read the abstract.</li>
+                        <li>Review the introduction.</li>
+                        <li>Check the article type.</li>
+                        <li>Scan the references.</li>
+                        <li>Decide whether deeper reading is worth your time.</li>
                     </ol>
                 </div>
 
@@ -1289,14 +1125,8 @@ footer p {
 
                 <p>
                     Do not reject a useful scholarly article simply because it is
-                    longer than you hoped. Research requires reading, and stronger
-                    projects usually come from deeper engagement with good sources.
-                </p>
-
-                <p>
-                    At the same time, you do not need to read every source from
-                    beginning to end simply because you opened it. Strategic reading
-                    helps you decide where your time will matter most.
+                    longer than you hoped. Stronger projects usually come from
+                    deeper engagement with useful sources.
                 </p>
 
                 <div class="quick-tip gold-tip">
@@ -1304,21 +1134,18 @@ footer p {
 
                     <p>
                         Choosing only the shortest or easiest sources may save time
-                        at the beginning, but it can make writing much harder later.
-                        Your argument can only become as developed as the research
-                        supporting it.
+                        at the beginning, but it often makes the writing much harder
+                        later.
                     </p>
                 </div>
 
                 <a class="back-to-top" href="#top">Back to top ↑</a>
             </section>
 
-            <!-- SECTION 5 -->
+            <!-- TOOLS -->
 
-            <section
-                class="content-section"
-                id="tools"
-            >
+            <section class="content-section" id="tools">
+
                 <h2>Research Tools, AI &amp; Your Own Thinking</h2>
 
                 <p class="section-label">
@@ -1331,26 +1158,20 @@ footer p {
                     speed is not the same thing as understanding.
                 </p>
 
-                <p>
-                    Every tool should support your judgment rather than make your
-                    decisions for you.
-                </p>
-
                 <div class="tool-grid">
 
                     <div class="tool-card">
                         <h3>Academic Databases</h3>
 
                         <p>
-                            Databases help you search collections of scholarly and
-                            academic materials using keywords, phrases, filters, and
-                            other search strategies.
+                            Databases help you search scholarly collections using
+                            keywords, phrases, filters, and other strategies.
                         </p>
 
                         <p>
                             <strong>Your job:</strong> develop useful search
-                            language, evaluate results, read sources, and continue
-                            refining the search.
+                            language, evaluate results, read sources, and refine
+                            the search.
                         </p>
                     </div>
 
@@ -1359,14 +1180,12 @@ footer p {
 
                         <p>
                             Google Scholar can help you locate scholarly material
-                            and follow citations beyond your initial database
-                            searches.
+                            and follow citations beyond your initial searches.
                         </p>
 
                         <p>
-                            <strong>Your job:</strong> verify the source, determine
-                            whether you can access it, and evaluate whether it is
-                            appropriate for your project.
+                            <strong>Your job:</strong> verify the source, locate
+                            access, and determine whether it is appropriate.
                         </p>
                     </div>
 
@@ -1374,14 +1193,13 @@ footer p {
                         <h3>Citation-Network Tools</h3>
 
                         <p>
-                            Tools that map related scholarship can help you visualize
-                            connections between authors, studies, and related works.
+                            These tools can help visualize relationships between
+                            authors, studies, and related scholarship.
                         </p>
 
                         <p>
-                            <strong>Your job:</strong> use those connections as
-                            leads, then locate, evaluate, and read the actual
-                            scholarship.
+                            <strong>Your job:</strong> treat those connections as
+                            leads and evaluate the actual sources yourself.
                         </p>
                     </div>
 
@@ -1389,16 +1207,14 @@ footer p {
                         <h3>Generative AI</h3>
 
                         <p>
-                            AI tools may help brainstorm search language, identify
+                            AI may help brainstorm search language, identify
                             possible directions, or suggest scholarship worth
                             investigating.
                         </p>
 
                         <p>
-                            <strong>Your job:</strong> verify everything. Never
-                            assume a source exists, is scholarly, says what the AI
-                            claims, or meets the requirements of your assignment
-                            until you locate and evaluate it yourself.
+                            <strong>Your job:</strong> verify everything and read
+                            the actual scholarship yourself.
                         </p>
                     </div>
 
@@ -1415,27 +1231,18 @@ footer p {
                 <div class="comparison">
                     <div>
                         <strong>Replacing:</strong><br>
-                        Ask AI for ten sources, accept the list, and build the paper
-                        around them.
+                        Ask AI for ten sources and build the project around whatever
+                        it provides.
                     </div>
 
-                    <div class="arrow" aria-hidden="true">→</div>
+                    <div class="arrow">→</div>
 
                     <div>
                         <strong>Supplementing:</strong><br>
-                        Use AI to generate possible leads or search language, then
-                        locate, evaluate, read, and choose sources yourself.
+                        Use AI for possible leads or terminology, then locate,
+                        evaluate, read, and choose sources yourself.
                     </div>
                 </div>
-
-                <h3>Research Tools Should Expand Your Agency</h3>
-
-                <p>
-                    The purpose of research is not merely to produce a finished
-                    document. Research teaches you how to ask better questions,
-                    identify patterns, evaluate information, recognize scholarly
-                    conversations, and form your own informed position.
-                </p>
 
                 <div class="quick-tip">
                     <h3>The Rule to Remember</h3>
@@ -1464,26 +1271,23 @@ footer p {
                 <ul>
                     <li>
                         Ready to turn research into paragraphs and arguments?
-                        Visit the
-                        <a href="writing.html">Writing page</a>.
+                        Visit the <a href="writing.html">Writing page</a>.
                     </li>
 
                     <li>
-                        Need help with APA citations, references, or document
-                        formatting? Visit the
-                        <a href="apa.html">APA page</a>.
+                        Need help with citations, references, or formatting?
+                        Visit the <a href="apa.html">APA page</a>.
                     </li>
 
                     <li>
-                        Looking for guidance on a literature review, annotated
-                        bibliography, or argumentative essay? Visit the
-                        <a href="essay-types.html">Major Assignments page</a>.
+                        Working on a literature review, annotated bibliography, or
+                        argumentative essay?
+                        Visit the <a href="essay-types.html">Major Assignments page</a>.
                     </li>
 
                     <li>
                         Need sentence structure, punctuation, or grammar help?
-                        Visit the
-                        <a href="grammar.html">Grammar page</a>.
+                        Visit the <a href="grammar.html">Grammar page</a>.
                     </li>
                 </ul>
             </aside>
@@ -1494,16 +1298,7 @@ footer p {
                 <p>
                     This resource was developed from course materials created by
                     Brittany Seay and concepts adapted from open educational
-                    resources used in ENGL 1213, including materials on rhetorical
-                    research, source categories, scholarly sources, source
-                    evaluation, and ethical source use.
-                </p>
-
-                <p>
-                    Additional course concepts regarding practical and conceptual
-                    research problems draw from principles discussed in
-                    <em>The Craft of Research</em> by Booth, Colomb, Williams,
-                    Bizup, and FitzGerald.
+                    resources used in ENGL 1213.
                 </p>
             </section>
 
@@ -1511,17 +1306,9 @@ footer p {
     </main>
 
     <footer>
-        <p>
-            <strong>Mrs. Seay's Writing Center</strong>
-        </p>
-
-        <p>
-            Created by Brittany Seay
-        </p>
-
-        <p>
-            Version 1.0 • August 2026
-        </p>
+        <p><strong>Mrs. Seay's Writing Center</strong></p>
+        <p>Created by Brittany Seay</p>
+        <p>Version 1.0 • August 2026</p>
     </footer>
 
 </body>
